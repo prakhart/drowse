@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<style type="text/css">
+    li {
+    display: inline-block !important;
+    margin-right: 20px;
+    }
+</style>
+
+<h1>{{ object.name }}</h1>
+<h1>{{ object.address }}</h1>
+<h1>{{ object.phone }}</h1>
+<h1>{{ object.image }}</h1>
+<h1>{{ object.email }}</h1>
+<h1>{{ object.timings }}</h1>
+<h1>{{ object.category }}</h1>
+<h1>{{ object.cuisines }}</h1>
+<h1>{{ object.special_offerings }}</h1>
+<p>Date: {{ now|date }}</p>
+
+{% endblock %}

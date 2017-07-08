@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<h1>Vendors</h1>
+
+<div class="row">
+{% for article in object_list %}
+
+
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+    {% if article.image %}
+      <img src="/media/{{ article.image }}" alt="...">
+     {% else %}
+ 	<img src="/media/default.jpg" alt="...">
+      {% endif %}
+
+      <div class="caption">
+        <h3>{{ article.name|title }} </h3>
+    		<b>Address: </b><span>{{ article.address }}</span><br>
+		    <b>Phone: </b><span>{{ article.phone }}</span><br>
+		    <b>Email: </b><span>{{ article.email }}</span><br>
+		    <b>Web Url: </b><span>{{ article.web_url }}</span><br>
+		    <b>Days Opened: </b><span>{{ article.day_timings }}</span><br>
+		    <b>Opening Timings: </b><span>{{ article.op_timings }}</span><br>
+		    <b>Closing Timings: </b><span>{{ article.close_timings }}</span><br>
+		    <br>
+		    <p><a href="/view_details/{{ article.id }}" class="btn btn-primary" role="button">View Details</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+
+{% empty %}
+
+
+    <li>No Vendors yet.</li>
+{% endfor %}
+</div>
+
+
+
+{% endblock %}
