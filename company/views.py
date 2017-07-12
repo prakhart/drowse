@@ -28,7 +28,7 @@ def edit_details(request):
             	mailList.append(usermail)
             email = EmailMessage(subject, html,to=mailList,from_email='tech.drowse@gmail.com') 
             email.content_subtype = "html"
-            email.send() 
+            email.send(fail_silently=True) 
             return redirect('/vendor_list/')
     return render(request,'company/edit_details.html',{"form":form})
 
