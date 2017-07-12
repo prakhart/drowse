@@ -25,8 +25,8 @@ SECRET_KEY = 'xhq$$zhc&qvcn)n!cvqn=^gc2)iyscgl!2u%tqh*&7422y8+7+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+#ALLOWED_HOSTS = ["godrowse.com","13.126.203.75","172.31.11.99","ec2-13-126-203-75.ap-south-1.compute.amazonaws.com"]
+ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = '/auth/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -110,13 +110,24 @@ WSGI_APPLICATION = 'newproj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+   # 'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #   }
+#}
 
+
+DATABASES = {
+  'default': {
+      'ENGINE': 'django.db.backends.mysql',
+      'NAME': 'drowse_db',
+      'HOST': '/var/lib/mysql/mysql.sock',
+      'PORT': '3306',
+      'USER': 'newuser',
+      'PASSWORD': 'rootDB123'
+  }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
