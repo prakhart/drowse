@@ -118,21 +118,12 @@ WSGI_APPLICATION = 'newproj.wsgi.application'
 #}
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> a303bdefa31a22ce251aea1120bc88476452be19
 DATABASES = {
   'default': {
       'ENGINE': 'django.db.backends.mysql',
       'NAME': 'drowse_db',
       'HOST': '/var/lib/mysql/mysql.sock',
-<<<<<<< HEAD
       'PORT': '3306',
-=======
-      'PORT': 'localhost',
->>>>>>> a303bdefa31a22ce251aea1120bc88476452be19
       'USER': 'newuser',
       'PASSWORD': 'rootDB123'
   }
