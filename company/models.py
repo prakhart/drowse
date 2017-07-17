@@ -19,6 +19,27 @@ def get_vendor_image_path(instance, filename):
     path = os.path.join('vendor', str(name), filename)
     return path
 
+def get_food_menu_path(instance, filename):
+    name = instance.name.replace(" ", "")
+    path = os.path.join('food_menu', str(name), filename)
+    return path
+
+
+def get_drinks_menu_path(instance, filename):
+    name = instance.name.replace(" ", "")
+    path = os.path.join('drinks_menu', str(name), filename)
+    return path
+
+def get_dessert_menu_path(instance, filename):
+    name = instance.name.replace(" ", "")
+    path = os.path.join('dessert_menu', str(name), filename)
+    return path
+
+def get_cafe_menu_path(instance, filename):
+    name = instance.name.replace(" ", "")
+    path = os.path.join('cafe_menu', str(name), filename)
+    return path
+
 
 class TblVendorManager(models.Manager):
     
@@ -39,10 +60,26 @@ class TblVendor(models.Model):
     web_url = models.CharField(max_length=250,null = True,blank = True)
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
-    image = models.FileField(upload_to=get_vendor_image_path,null = True,blank = True)
-    day_timings = models.CharField(max_length=250,null = True,blank = True)
-    op_timings = models.CharField(max_length=250,null = True,blank = True)
-    close_timings = models.CharField(max_length=250,null = True,blank = True)
+    description =  models.TextField(null = True,blank = True)
+    cover_photo = models.FileField(upload_to=get_vendor_image_path,null = True,blank = True)
+    mon_op_timings = models.CharField(max_length=250,null = True,blank = True)
+    mon_close_timings = models.CharField(max_length=250,null = True,blank = True)
+    tues_op_timings = models.CharField(max_length=250,null = True,blank = True)
+    tues_close_timings = models.CharField(max_length=250,null = True,blank = True)
+    wed_op_timings = models.CharField(max_length=250,null = True,blank = True)
+    wed_close_timings = models.CharField(max_length=250,null = True,blank = True)
+    thurs_op_timings = models.CharField(max_length=250,null = True,blank = True)
+    thurs_close_timings = models.CharField(max_length=250,null = True,blank = True)
+    fri_op_timings = models.CharField(max_length=250,null = True,blank = True)
+    fri_close_timings = models.CharField(max_length=250,null = True,blank = True)
+    sat_op_timings = models.CharField(max_length=250,null = True,blank = True)
+    sat_close_timings = models.CharField(max_length=250,null = True,blank = True)
+    sun_op_timings = models.CharField(max_length=250,null = True,blank = True)
+    sun_close_timings = models.CharField(max_length=250,null = True,blank = True)
+    food_menu = models.FileField(upload_to=get_food_menu_path,null = True,blank = True)
+    drinks_menu = models.FileField(upload_to=get_drinks_menu_path,null = True,blank = True)
+    dessert_menu = models.FileField(upload_to=get_dessert_menu_path,null = True,blank = True)
+    cafe_menu = models.FileField(upload_to=get_cafe_menu_path,null = True,blank = True)
     category = models.CharField(max_length=250,null = True,blank = True)
     cuisines = models.CharField(max_length=250,null = True,blank = True)
     ambience = models.CharField(max_length=250,null = True,blank = True)
@@ -95,6 +132,19 @@ def get_catagory_path(instance, filename):
     cat_name = instance.cat_name.replace(" ", "")
     path = os.path.join('vendor', str(cat_type),str(cat_name), filename)
     return path
+
+
+def get_vendor_image_path(instance, filename):
+
+    name = instance.vendor.name.replace(" ", "")
+    path = os.path.join('vendor_image', str(name), filename)
+    return path
+
+
+class TblVendorImages(models.Model):
+    vendor = models.ForeignKey("TblVendor",max_length=250,null = True,blank = True)
+    image = models.FileField(upload_to=get_vendor_image_path,null = True,blank = True)
+
 
 
 class TblData(models.Model):

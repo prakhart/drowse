@@ -1,61 +1,876 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
+{% extends "base.html" %}
 {% block content %}
-<style type="text/css">
-    li {
-    display: inline-block !important;
-    margin-right: 20px;
-    }
-</style>
-
-   
-
-<form class="form-horizontal"  method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% for field in form %}
-
-    <div class="form-group">
-        <div class="col-sm-3 control-label">
-            <label > {{ field.label }}</label> 
-        </div>
-        <div class="col-sm-8">
-        {% if  field.name == "op_timings" or field.name == "close_timings"  %}
-
-         <input  name="{{ field.name }}" type="text" class="form-control input-small timepicker1">
-   
-        {% else %}
-
-        {{ field }}
-
-        {% endif %}
-        </div>
-        {% if form.errors %}
-        <div class="alert alert-danger" role="alert">
-            <a href="#" class="alert-link">   {{ field.errors }}</a>
-        </div>
-        {% endif %}
-    </div>
-    <br>
-    {% endfor %}
-
-    <div class="form-group">
-        <label class="col-sm-3 control-label" for="domain">Send Registraion Mail</label>
-
-        <div class="col-sm-8">
-        <input id="registraionMail" name="registraionMail" type="checkbox"  class="checkbox" style="width: 30px; height: 30px; margin-left: 25px;">
+{% include "header.html" %}
+{% load staticfiles %}
+    <!-- Main header banner for a primary marketing message -->
+    <div class="jumbotron gd-header-bg">
+        <div class="container text-center">
+            <h2 class="header-tagline"><span class="gd-main-color padding-20">Let's Fill Up all Your Information</span></h2>
         </div>
     </div>
 
+    <div class="container-fluid">
+        <!-- accordion section strat from here -->
+        <div class="row">
+            <form class="form-horizontal">
+                <div class="accordion-custom">
+                    <h1>Basic Vendor Profile</h1>
+                    <div>
+                        <div class="inner-wrapper">
+                            <div class="form-group">
+                                <label for="outletname" class="col-sm-3 control-label">Outlet Name</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="text" name="name" id="id_name" placeholder="Name of the Vendor" class="form-control" maxlength="250" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location" class="col-sm-3 control-label">Latitude</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="text" name="latitude" placeholder="Latitude of the Vendor" class="form-control" id="id_latitude" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location" class="col-sm-3 control-label">Longitude</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="text" name="longitude" placeholder="Longitude of the Vendor" class="form-control" id="id_longitude" />
+                                </div>
+                            </div>
 
 
 
-    <div class="form-group">
-        <div class="col-sm-offset-4 col-sm-8">
-            <button type="submit" class="btn btn-default">Submit</button>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Contact Details</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <div class="row gd-innerrow">
+                                        <label for="address" class="col-sm-2 text-center">Address</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="address" id="id_address" placeholder="Address of the Vendor" class="form-control gd-inline-control" maxlength="250" />
+                                        </div>
+                                        <label for="email" class="col-sm-2 text-center">E-mail</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="email" id="id_email" required placeholder="Email of the Vendor" class="form-control gd-inline-control" maxlength="250" />
+                                        </div>
+                                        <label for="phone" class="col-sm-2 text-center">Phone</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="phone" placeholder="Name of the admin" class="form-control gd-inline-control" id="id_phone" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Outlet Timings</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <div class="row">
+                                        <label for="monday" class="col-sm-2 text-center">Monday</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="mon_op_timings" id="id_mon_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                                <div class="col-sm-2 text-center">
+                                                    <span>to</span>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="mon_close_timings" id="id_mon_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="tuesday" class="col-sm-2 text-center">Tuesday</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="tues_op_timings" id="id_tues_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                                <div class="col-sm-2 text-center">
+                                                    <span>to</span>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="tues_close_timings" id="id_tues_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="wednesday" class="col-sm-2 text-center">Wednesday</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="wed_op_timings" id="id_wed_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                                <div class="col-sm-2 text-center">
+                                                    <span>to</span>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="wed_close_timings" id="id_wed_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="thrusday" class="col-sm-2 text-center">Thrusday</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="thurs_op_timings" id="id_thurs_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                                <div class="col-sm-2 text-center">
+                                                    <span>to</span>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="thurs_close_timings" id="id_thurs_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="friday" class="col-sm-2 text-center">Friday</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="fri_op_timings" id="id_fri_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                                <div class="col-sm-2 text-center">
+                                                    <span>to</span>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="fri_close_timings" id="id_fri_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="saturday" class="col-sm-2 text-center">Saturday</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="sat_op_timings" id="id_sat_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                                <div class="col-sm-2 text-center">
+                                                    <span>to</span>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="sat_close_timings" id="id_sat_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="sunday" class="col-sm-2 text-center">Sunday</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="sun_op_timings" id="id_sun_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                                <div class="col-sm-2 text-center">
+                                                    <span>to</span>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="sun_close_timings" id="id_sun_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1  gd-inline-control " maxlength="250" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Menu Lists</h1>
+                    <div>
+                        <div class="inner-wrapper">
+                            <div class="form-group">
+                                <p class="header-text text-right">Upload JPEG Files(less than 2MB each)</p>
+                                <label class="col-sm-3 control-label">Food Menu</label>
+                                
+                                 <input type="file" name="food_menu"  class="file" id="id_food_menu" />
+
+                                <div class="input-group col-sm-9 gd-input-control">
+
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                    <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                                    <span class="input-group-btn">
+                        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                      </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Drinks Menu</label>
+                                <input type="file"  class="file" name="drinks_menu" id="id_drinks_menu" />
+                                <div class="input-group col-sm-9 gd-input-control">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                    <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                                    <span class="input-group-btn">
+                        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                      </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label ">Dessert Name</label>
+                                <input type="file"  class="file" name="dessert_menu" id="id_dessert_menu" />
+                                <div class="input-group col-sm-9 gd-input-control">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                    <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                                    <span class="input-group-btn">
+                        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                      </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Cafe Menu</label>
+                                <input type="file"  class="file" name="cafe_menu" id="id_cafe_menu" />
+                                <div class="input-group col-sm-9 gd-input-control">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                    <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                                    <span class="input-group-btn">
+                        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Descriptions and Photos</h1>
+                    <div>
+                        <div class="inner-wrapper">
+                            <div class="form-group">
+                                <textarea class="form-control" maxlength="500" name="description" rows="4" id="id_description" placeholder="Add your outlet description here (max. 500 words)"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <p class="header-text text-right">Upload JPEG Files(less than 2MB each)</p>
+                                <label class="col-sm-3 control-label">Cover Photo</label>
+                                <input type="file" name="cover_photo" class="file" id="id_cover_photo" />
+                                <div class="input-group col-sm-9 gd-input-control">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                    <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                                    <span class="input-group-btn">
+                        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                      </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label ">Add Photos</label>
+                                <input type="file" name="img[]" class="file">
+                                <div class="input-group col-sm-9 gd-input-control">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                    <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                                    <span class="input-group-btn">
+                        <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Outlet Categories</h1>
+                    <div>
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="restrobars">
+                                                    <div>
+                                                        <img src="/static/img/restro-bar.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="category" value="2" id="id_category_1" placeholder="category of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>restro bars</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="" for="pubsnbars">
+                                                    <div>
+                                                        <img src="/static/img/pubs-n-bars.png" class="img-responsive">
+                                                    </div>
+                                                    <label for="id_category_2"><input type="checkbox" name="category" value="3" id="id_category_2" placeholder="category of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>pubs n bars</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="" for="loungebars">
+                                                    <div>
+                                                        <img src="/static/img/lounge-bars.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="category" value="4" id="id_category_3" placeholder="category of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>lounge bars</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="" for="discotheques">
+                                                    <div>
+                                                        <img src="/static/img/discotheques.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="category" value="7" id="id_category_6" placeholder="category of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>discotheques</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="" for="nightclubs">
+                                                    <div>
+                                                        <img src="/static/img/nightclubs.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="category" value="5" id="id_category_4" placeholder="category of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>nightclubs</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="" for="sportsbars">
+                                                    <div>
+                                                        <img src="/static/img/sports-bars.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="category" value="1" id="id_category_0" placeholder="category of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>sports bars</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="" for="coffeeshops">
+                                                    <div>
+                                                        <img src="/static/img/coffee-shops.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="category" value="6" id="id_category_5" placeholder="category of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>coffee shops</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="" for="galaevents">
+                                                    <div>
+                                                        <img src="/static/img/gala-events.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="category" value="8" id="id_category_7" placeholder="category of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>gala events</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Cuisine Offered</h1>
+                    <div>
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn " for="american">
+                                                    <div>
+                                                        <img src="/static/img/american.png" class="img-responsive">
+                                                    </div>
+                                                   <input type="checkbox" name="cuisines" value="12" id="id_cuisines_11" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>american</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="italian">
+                                                    <div>
+                                                        <img src="/static/img/italian.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="cuisines" value="8" id="id_cuisines_7" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>italian</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="french">
+                                                    <div>
+                                                        <img src="/static/img/french.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="cuisines" value="9" id="id_cuisines_8" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>french</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="mexican">
+                                                    <div>
+                                                        <img src="/static/img/mexican.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="cuisines" value="2" id="id_cuisines_1" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>mexican</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="indian">
+                                                    <div>
+                                                        <img src="/static/img/indian.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="cuisines" value="7" id="id_cuisines_6" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>indian</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="chinese">
+                                                    <div>
+                                                        <img src="/static/img/chinese.png" class="img-responsive">
+                                                    </div>
+                                                   <input type="checkbox" name="cuisines" value="11" id="id_cuisines_10" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>chinese</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="japanese">
+                                                    <div>
+                                                        <img src="/static/img/japanese.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="cuisines" value="10" id="id_cuisines_9" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>japanese</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="lebanese">
+                                                    <div>
+                                                        <img src="/static/img/lebanese.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="cuisines" value="6" id="id_cuisines_5" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>lebanese</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Special Categories</h1>
+                    <div>
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn " for="sheeshabar">
+                                                    <div>
+                                                        <img src="/static/img/sheesha-bar.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="3" id="id_special_offerings_2" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>sheesha bar</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="creativecocktails">
+                                                    <div>
+                                                        <img src="/static/img/creative-cocktails.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="2" id="id_special_offerings_1" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>creative cocktails</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="microbreweries">
+                                                    <div>
+                                                        <img src="/static/img/microbreweries.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="1" id="id_special_offerings_0" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>microbreweries</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="sundaybrunch">
+                                                    <div>
+                                                        <img src="/static/img/sunday-brunch.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="4" id="id_special_offerings_3" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>sunday brunch</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="unlimitedbuffets">
+                                                    <div>
+                                                        <img src="/static/img/unlimited-buffets.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="6" id="id_special_offerings_5" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>unlimited buffets</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="authenticseafood">
+                                                    <div>
+                                                        <img src="/static/img/authentic-seafood.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="7" id="id_special_offerings_6" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>authentic seafood</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="ladiesnightout">
+                                                    <div>
+                                                        <img src="/static/img/ladies-night-out.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="8" id="id_special_offerings_7" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>ladies night out</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="specialparties">
+                                                    <div>
+                                                        <img src="/static/img/special-parties.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="10" id="id_special_offerings_10" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>special parties</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="livestreaming">
+                                                    <div>
+                                                        <img src="/static/img/live-streaming.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="9" id="id_special_offerings_8" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>live streaming</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="latenightservice">
+                                                    <div>
+                                                        <img src="/static/img/late-night-service.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="special_offerings" value="5" id="id_special_offerings_4" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>late night service</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Outlet Ambience</h1>
+                    <div>
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn " for="casualdining">
+                                                    <div>
+                                                        <img src="/static/img/casual-dining.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="casualdining" id="casualdining"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>casual dining</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="finedining">
+                                                    <div>
+                                                        <img src="/static/img/fine-dining.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="finedining" id="finedining"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>fine dining</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="rooftopdining">
+                                                    <div>
+                                                        <img src="/static/img/rooftop-dining.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="rooftopdining" id="rooftopdining"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>rooftop dining</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="poolsidelounge">
+                                                    <div>
+                                                        <img src="/static/img/poolside-lounge.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="poolsidelounge" id="poolsidelounge"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>poolside lounge</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="privatedining">
+                                                    <div>
+                                                        <img src="/static/img/private-dining.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="privatedining" id="privatedining"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>private dining</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="livemusic">
+                                                    <div>
+                                                        <img src="/static/img/live-music.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="livemusic" id="livemusic"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>live music</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="">
+                                                    <div>
+                                                        <img src="/static/img/loud-dj-music.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="louddjmusic" id="louddjmusic"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>loud dj music</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="karaoke">
+                                                    <div>
+                                                        <img src="/static/img/karaoke.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="karaoke" id="karaoke"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>karaoke</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn" for="dancefloor">
+                                                    <div>
+                                                        <img src="/static/img/dance-floor.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="dancefloor" id="dancefloor"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>dance floor</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Pricing and Payments</h1>
+                    <div>
+                        <div class="inner-wrapper">
+                            <div class="form-group">
+                                <label for="foodfortwo" class="col-sm-3 control-label">food for two</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="text" class="form-control" id="foodfortwo" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="beerpitcher" class="col-sm-3 control-label">beer pitcher</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="text" class="form-control" id="beerpitcher" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="foradessert" class="col-sm-3 control-label">for a dessert</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="text" class="form-control" id="foradessert" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="foracoffee" class="col-sm-3 control-label">for a coffee</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="text" class="form-control" id="foracoffee" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="location" class="col-sm-3 control-label">payment modes</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                        <div class="row">
+                                            <div class="col-md-3">
+
+                                                <div>
+                                                    <label class="btn " for="cashpayment">
+                                                        <div>
+                                                            <img src="/static/img/cash-payment.png" class="img-responsive">
+                                                        </div>
+                                                        <input type="checkbox" name="cashpayment" id="cashpayment"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>cash payment</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+
+                                                <div>
+                                                    <label class="btn" for="cardpayment">
+                                                        <div>
+                                                            <img src="/static/img/card-payment.png" class="img-responsive">
+                                                        </div>
+                                                        <input type="checkbox" name="cardpayment" id="cardpayment"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>card payment</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+
+                                                <div>
+                                                    <label class="btn" for="mobilewallet">
+                                                        <div>
+                                                            <img src="/static/img/mobile-wallet.png" class="img-responsive">
+                                                        </div>
+                                                        <input type="checkbox" name="mobilewallet" id="mobilewallet"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>mobile wallet</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+
+                                                <div>
+                                                    <label class="btn" for="coupons">
+                                                        <div>
+                                                            <img src="/static/img/coupons.png" class="img-responsive">
+                                                        </div>
+                                                        <input type="checkbox" name="coupons" id="coupons"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>coupons</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <h1>Facilities Offered</h1>
+                    <div>
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn " for="fullveggie">
+                                                    <div>
+                                                        <img src="/static/img/full-veggie.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="fullveggie" id="fullveggie"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>full veggie</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="fishnmeat">
+                                                    <div>
+                                                        <img src="/static/img/fish-n-meat.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="fishnmeat" id="fishnmeat"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>fish n meat</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="smokingzone">
+                                                    <div>
+                                                        <img src="/static/img/smoking-zone.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="smokingzone" id="smokingzone"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>smoking zone</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="wififacility">
+                                                    <div>
+                                                        <img src="/static/img/wi-fi-facility.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="wififacility" id="wififacility"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>wi-fi facility</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>
+                                                <label class="btn " for="freeparking">
+                                                    <div>
+                                                        <img src="/static/img/free-parking.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="freeparking" id="freeparking"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>free parking</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="paidparking">
+                                                    <div>
+                                                        <img src="/static/img/paid-parking.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="paidparking" id="paidparking"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>paid parking</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="valetparking">
+                                                    <div>
+                                                        <img src="/static/img/valet-parking.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="valetparking" id="valetparking"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>valet parking</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+
+                                            <div>
+                                                <label class="btn" for="socialevents">
+                                                    <div>
+                                                        <img src="/static/img/social-events.png" class="img-responsive">
+                                                    </div>
+                                                    <input type="checkbox" name="socialevents" id="socialevents"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>social events</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1>Contact Person</h1>
+                    <div>
+                        <div class="inner-wrapper">
+                            <div class="form-group">
+                                <label for="ownername" class="col-sm-3 control-label">Name</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="text" class="form-control" id="ownername" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ownerpnone" class="col-sm-3 control-label">Phone</label>
+                                <div class="col-sm-9 gd-input-control">
+                                    <input type="tel" class="form-control" id="ownerpnone" placeholder="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
         </div>
-    </div>
-</form>
-<script type="text/javascript">
-    $('.timepicker1').timepicker();
-</script>
+
+{% include "footer2.html" %}
+
 {% endblock %}

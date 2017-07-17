@@ -72,13 +72,14 @@ FACILITIES_CHOICES = (
 SPECIAL_CHOICES = (
     ("1","MICROBREWERIES"),
     ("2","CREATIVE COCKTAILS"),
-    ("3","GALA EVENTS"),
+    ("3","SHEESHA BAR"),
     ("4","SUNDAY BRUNCH"),
     ("5","LATE NIGHT SERVING"),
     ("6","UNLIMITED DRINKS N BUFFET"),
     ("7","LIP SMACKING SEAFOOD"),
     ("8","LADIES NIGHT OUT"),
     ("9","LIVE SPORTS STREAMING"),
+    ("9","Special Parties"),
     )
 
 
@@ -125,7 +126,11 @@ class AddVendor(forms.ModelForm):
         model = TblVendor
 
 
-        fields = ( 'name','address','phone','image','email','web_url','latitude','longitude','category','cuisines','special_offerings','ambience','facilities','payment_modes','cost_for_two','day_timings','op_timings','close_timings','contact_person','phone_contact_person')
+        fields = ( 'name','description','address','phone','cover_photo','email','web_url','latitude','longitude','category','special_offerings','payment_modes',
+                    "mon_op_timings","mon_close_timings","tues_op_timings","tues_close_timings","wed_op_timings","wed_close_timings","thurs_op_timings",
+                    "thurs_close_timings","fri_op_timings","fri_close_timings","sat_op_timings","sat_close_timings","sun_op_timings","sun_close_timings",       
+                    'cuisines','ambience','facilities','cost_for_two','contact_person','phone_contact_person',
+                    'food_menu','drinks_menu','dessert_menu','cafe_menu',)
 
         widgets = {
 
@@ -138,7 +143,11 @@ class AddVendor(forms.ModelForm):
             'phone': forms.TextInput(
                 attrs={'class': 'form-control', 
                        'placeholder': 'Name of the admin'}),
-            'image':  forms.ClearableFileInput(),
+            'cover_photo':  forms.ClearableFileInput(),
+            'food_menu':  forms.ClearableFileInput(),
+            'drinks_menu':  forms.ClearableFileInput(),
+            'dessert_menu':  forms.ClearableFileInput(),
+            'cafe_menu':  forms.ClearableFileInput(),
             'email': forms.TextInput(
                 attrs={'class': 'form-control', 
                        'placeholder': 'Email of the Vendor'}),
@@ -184,15 +193,57 @@ class AddVendor(forms.ModelForm):
             'web_url': forms.TextInput(
                 attrs={'class': 'form-control', 
                        'placeholder': 'web_url of the Vendor'}), 
-            'day_timings': forms.Select(choices=DAY_CHOICES,
-                attrs={'class': 'form-control', 
-                       'placeholder': 'day_timings Open of the Vendor'}), 
-            'op_timings': forms.TextInput(
-                attrs={'class': 'form-control', 
+
+            'mon_op_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
                        'placeholder': 'Opening Timings of the Vendor'}), 
-            'close_timings': forms.TextInput(
-                attrs={'class': 'form-control', 
+            'mon_close_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
                        'placeholder': 'close_timings of the Vendor'}), 
+
+            'tues_op_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'Opening Timings of the Vendor'}), 
+            'tues_close_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'close_timings of the Vendor'}), 
+
+            'wed_op_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'Opening Timings of the Vendor'}), 
+            'wed_close_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'close_timings of the Vendor'}), 
+
+            'thurs_op_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'Opening Timings of the Vendor'}), 
+            'thurs_close_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'close_timings of the Vendor'}), 
+
+            'fri_op_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'Opening Timings of the Vendor'}), 
+            'fri_close_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'close_timings of the Vendor'}), 
+
+            'sat_op_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'Opening Timings of the Vendor'}), 
+            'sat_close_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'close_timings of the Vendor'}), 
+
+            'sun_op_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'Opening Timings of the Vendor'}), 
+            'sun_close_timings': forms.TextInput(
+                attrs={'class': 'form-control input-small timepicker1', 
+                       'placeholder': 'close_timings of the Vendor'}), 
+
+
         
             }
 
@@ -200,7 +251,7 @@ class AddVendor(forms.ModelForm):
             'name': 'Vendor Name',
             'address': 'Vendor address',
             'phone':'Vendor phone',
-            'image': 'Vendor image',
+            'cover_photo': 'Vendor image',
             'email': 'Vendor email',
             'timings':'Vendor timings',
             'category': 'Vendor category',
@@ -213,9 +264,7 @@ class AddVendor(forms.ModelForm):
             'contact_person': 'Vendor contact person',
             'phone_contact_person': 'Vendor contact person phone',
             'web_url' : "Web Url" ,
-            'day_timings' :  "Days Opened",
-            'op_timings' : "Opening Time" ,
-            'close_timings' : "Closing Time" ,
+
             'ambience' :  "Ambience"
             
         }

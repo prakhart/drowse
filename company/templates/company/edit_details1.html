@@ -1,0 +1,788 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+{% load staticfiles %}
+<style type="text/css">
+    li {
+    display: inline-block !important;
+    margin-right: 20px;
+    }
+</style>
+
+    <div class="container text-center">
+    <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+        <form class="form-horizontal"  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > {{ field.label }}</label> 
+                </div>
+                <div class="col-sm-8">
+                {{ field }}
+                </div>
+                {% if form.errors %}
+                <div class="alert alert-danger" role="alert">
+                    <a href="#" class="alert-link">   {{ field.errors }}</a>
+                </div>
+                {% endif %}
+            </div>
+            <br>
+            {% endfor %}
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="domain">Send Registraion Mail</label>
+
+                <div class="col-sm-8">
+                <input id="registraionMail" name="registraionMail" type="checkbox"  class="checkbox" style="width: 30px; height: 30px; margin-left: 25px;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <form class="form-horizontal"  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor Name</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="name" id="id_name" placeholder="Name of the Vendor" class="form-control" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Description</label> 
+                </div>
+                <div class="col-sm-8">
+                <textarea name="description" rows="10" cols="40" id="id_description">
+</textarea>
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor address</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="address" id="id_address" placeholder="Address of the Vendor" class="form-control" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor phone</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="phone" placeholder="Name of the admin" class="form-control" id="id_phone" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor image</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="file" name="cover_photo" id="id_cover_photo" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor email</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="email" id="id_email" required placeholder="Email of the Vendor" class="form-control" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Web Url</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="web_url" id="id_web_url" placeholder="web_url of the Vendor" class="form-control" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Latitude</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="latitude" placeholder="Latitude of the Vendor" class="form-control" id="id_latitude" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Longitude</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="longitude" placeholder="Longitude of the Vendor" class="form-control" id="id_longitude" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor category</label> 
+                </div>
+                <div class="col-sm-8">
+                <ul id="id_category" class="form-control">
+    <li><label for="id_category_0"><input type="checkbox" name="category" value="1" id="id_category_0" placeholder="category of the Vendor" class="form-control" maxlength="250" />
+ SPORTS BAR</label>
+
+</li>
+    <li><label for="id_category_1"><input type="checkbox" name="category" value="2" id="id_category_1" placeholder="category of the Vendor" class="form-control" maxlength="250" />
+ RESTRO BAR</label>
+
+</li>
+    <li><label for="id_category_2"><input type="checkbox" name="category" value="3" id="id_category_2" placeholder="category of the Vendor" class="form-control" maxlength="250" />
+ PUBS N BARS</label>
+
+</li>
+    <li><label for="id_category_3"><input type="checkbox" name="category" value="4" id="id_category_3" placeholder="category of the Vendor" class="form-control" maxlength="250" />
+ LOUNGE BAR</label>
+
+</li>
+    <li><label for="id_category_4"><input type="checkbox" name="category" value="5" id="id_category_4" placeholder="category of the Vendor" class="form-control" maxlength="250" />
+ NIGHT CLUB</label>
+
+</li>
+    <li><label for="id_category_5"><input type="checkbox" name="category" value="6" id="id_category_5" placeholder="category of the Vendor" class="form-control" maxlength="250" />
+ COFFEE SHOPS/CAFE</label>
+
+</li>
+    <li><label for="id_category_6"><input type="checkbox" name="category" value="7" id="id_category_6" placeholder="category of the Vendor" class="form-control" maxlength="250" />
+ DISCOTHEQUES / DANCE FLOOR</label>
+
+</li>
+    <li><label for="id_category_7"><input type="checkbox" name="category" value="8" id="id_category_7" placeholder="category of the Vendor" class="form-control" maxlength="250" />
+ GALA EVENTS</label>
+
+</li>
+</ul>
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor Special Offerings</label> 
+                </div>
+                <div class="col-sm-8">
+                <ul id="id_special_offerings" class="form-control">
+    <li><label for="id_special_offerings_0"><input type="checkbox" name="special_offerings" value="1" id="id_special_offerings_0" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ MICROBREWERIES</label>
+
+</li>
+    <li><label for="id_special_offerings_1"><input type="checkbox" name="special_offerings" value="2" id="id_special_offerings_1" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ CREATIVE COCKTAILS</label>
+
+</li>
+    <li><label for="id_special_offerings_2"><input type="checkbox" name="special_offerings" value="3" id="id_special_offerings_2" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ GALA EVENTS</label>
+
+</li>
+    <li><label for="id_special_offerings_3"><input type="checkbox" name="special_offerings" value="4" id="id_special_offerings_3" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ SUNDAY BRUNCH</label>
+
+</li>
+    <li><label for="id_special_offerings_4"><input type="checkbox" name="special_offerings" value="5" id="id_special_offerings_4" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ LATE NIGHT SERVING</label>
+
+</li>
+    <li><label for="id_special_offerings_5"><input type="checkbox" name="special_offerings" value="6" id="id_special_offerings_5" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ UNLIMITED DRINKS N BUFFET</label>
+
+</li>
+    <li><label for="id_special_offerings_6"><input type="checkbox" name="special_offerings" value="7" id="id_special_offerings_6" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ LIP SMACKING SEAFOOD</label>
+
+</li>
+    <li><label for="id_special_offerings_7"><input type="checkbox" name="special_offerings" value="8" id="id_special_offerings_7" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ LADIES NIGHT OUT</label>
+
+</li>
+    <li><label for="id_special_offerings_8"><input type="checkbox" name="special_offerings" value="9" id="id_special_offerings_8" placeholder="special_offerings of the Vendor" class="form-control" maxlength="250" />
+ LIVE SPORTS STREAMING</label>
+
+</li>
+</ul>
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor Payment Modes</label> 
+                </div>
+                <div class="col-sm-8">
+                <ul id="id_payment_modes" class="form-control">
+    <li><label for="id_payment_modes_0"><input type="checkbox" name="payment_modes" value="1" id="id_payment_modes_0" placeholder="payment_modes of the Vendor" class="form-control" maxlength="250" />
+ CASH</label>
+
+</li>
+    <li><label for="id_payment_modes_1"><input type="checkbox" name="payment_modes" value="2" id="id_payment_modes_1" placeholder="payment_modes of the Vendor" class="form-control" maxlength="250" />
+ CREDIT / DEBIT CARD PAYMENT</label>
+
+</li>
+    <li><label for="id_payment_modes_2"><input type="checkbox" name="payment_modes" value="3" id="id_payment_modes_2" placeholder="payment_modes of the Vendor" class="form-control" maxlength="250" />
+ ONLINE WALLETS ACCEPTED ( PAYTM, MOBIKWIK, FREECHARGE )</label>
+
+</li>
+    <li><label for="id_payment_modes_3"><input type="checkbox" name="payment_modes" value="4" id="id_payment_modes_3" placeholder="payment_modes of the Vendor" class="form-control" maxlength="250" />
+ POPULAR COUPONS LIKE SODEXO, DINERS INTERNATIONAL</label>
+
+</li>
+</ul>
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Mon op timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="mon_op_timings" id="id_mon_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Mon close timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="mon_close_timings" id="id_mon_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Tues op timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="tues_op_timings" id="id_tues_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Tues close timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="tues_close_timings" id="id_tues_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Wed op timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="wed_op_timings" id="id_wed_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Wed close timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="wed_close_timings" id="id_wed_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Thurs op timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="thurs_op_timings" id="id_thurs_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Thurs close timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="thurs_close_timings" id="id_thurs_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Fri op timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="fri_op_timings" id="id_fri_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Fri close timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="fri_close_timings" id="id_fri_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Sat op timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="sat_op_timings" id="id_sat_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Sat close timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="sat_close_timings" id="id_sat_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Sun op timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="sun_op_timings" id="id_sun_op_timings" placeholder="Opening Timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Sun close timings</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="sun_close_timings" id="id_sun_close_timings" placeholder="close_timings of the Vendor" class="form-control input-small timepicker1" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor cuisines</label> 
+                </div>
+                <div class="col-sm-8">
+                <ul id="id_cuisines" class="form-control">
+    <li><label for="id_cuisines_0"><input type="checkbox" name="cuisines" value="1" id="id_cuisines_0" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ CONTINENTAL</label>
+
+</li>
+    <li><label for="id_cuisines_1"><input type="checkbox" name="cuisines" value="2" id="id_cuisines_1" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ MEXICAN</label>
+
+</li>
+    <li><label for="id_cuisines_2"><input type="checkbox" name="cuisines" value="3" id="id_cuisines_2" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ PAN ASIAN</label>
+
+</li>
+    <li><label for="id_cuisines_3"><input type="checkbox" name="cuisines" value="4" id="id_cuisines_3" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ ORIENTAL</label>
+
+</li>
+    <li><label for="id_cuisines_4"><input type="checkbox" name="cuisines" value="5" id="id_cuisines_4" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ FAST FOOD</label>
+
+</li>
+    <li><label for="id_cuisines_5"><input type="checkbox" name="cuisines" value="6" id="id_cuisines_5" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ LEBANESE</label>
+
+</li>
+    <li><label for="id_cuisines_6"><input type="checkbox" name="cuisines" value="7" id="id_cuisines_6" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ INDIAN</label>
+
+</li>
+    <li><label for="id_cuisines_7"><input type="checkbox" name="cuisines" value="8" id="id_cuisines_7" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ ITALIAN</label>
+
+</li>
+    <li><label for="id_cuisines_8"><input type="checkbox" name="cuisines" value="9" id="id_cuisines_8" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ FRENCH</label>
+
+</li>
+    <li><label for="id_cuisines_9"><input type="checkbox" name="cuisines" value="10" id="id_cuisines_9" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ JAPANESE</label>
+
+</li>
+    <li><label for="id_cuisines_10"><input type="checkbox" name="cuisines" value="11" id="id_cuisines_10" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ CHINESE</label>
+
+</li>
+    <li><label for="id_cuisines_11"><input type="checkbox" name="cuisines" value="12" id="id_cuisines_11" placeholder="cuisines of the Vendor" class="form-control" maxlength="250" />
+ AMERICAN</label>
+
+</li>
+</ul>
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Ambience</label> 
+                </div>
+                <div class="col-sm-8">
+                <ul id="id_ambience" class="form-control">
+    <li><label for="id_ambience_0"><input type="checkbox" name="ambience" value="1" id="id_ambience_0" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ CASUAL DINING</label>
+
+</li>
+    <li><label for="id_ambience_1"><input type="checkbox" name="ambience" value="2" id="id_ambience_1" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ FINE DINING</label>
+
+</li>
+    <li><label for="id_ambience_2"><input type="checkbox" name="ambience" value="3" id="id_ambience_2" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ PRIVATE DINING AREA</label>
+
+</li>
+    <li><label for="id_ambience_3"><input type="checkbox" name="ambience" value="4" id="id_ambience_3" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ ROOFTOP DINING</label>
+
+</li>
+    <li><label for="id_ambience_4"><input type="checkbox" name="ambience" value="5" id="id_ambience_4" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ POOLSIDE LOUNGE</label>
+
+</li>
+    <li><label for="id_ambience_5"><input type="checkbox" name="ambience" value="6" id="id_ambience_5" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ LIVE MUSIC PERFORMANCE</label>
+
+</li>
+    <li><label for="id_ambience_6"><input type="checkbox" name="ambience" value="7" id="id_ambience_6" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ LOUD DANCE MUSIC</label>
+
+</li>
+    <li><label for="id_ambience_7"><input type="checkbox" name="ambience" value="8" id="id_ambience_7" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ KARAOKE</label>
+
+</li>
+    <li><label for="id_ambience_8"><input type="checkbox" name="ambience" value="9" id="id_ambience_8" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" />
+ DANCE FLOOR</label>
+
+</li>
+</ul>
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor facilities</label> 
+                </div>
+                <div class="col-sm-8">
+                <ul id="id_facilities" class="form-control">
+    <li><label for="id_facilities_0"><input type="checkbox" name="facilities" value="1" id="id_facilities_0" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ FULLY VEGETARIAN</label>
+
+</li>
+    <li><label for="id_facilities_1"><input type="checkbox" name="facilities" value="2" id="id_facilities_1" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ NON-VEGETARIAN</label>
+
+</li>
+    <li><label for="id_facilities_2"><input type="checkbox" name="facilities" value="3" id="id_facilities_2" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ JAIN FOOD</label>
+
+</li>
+    <li><label for="id_facilities_3"><input type="checkbox" name="facilities" value="4" id="id_facilities_3" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ BUFFET</label>
+
+</li>
+    <li><label for="id_facilities_4"><input type="checkbox" name="facilities" value="5" id="id_facilities_4" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ HOME DELIVERY</label>
+
+</li>
+    <li><label for="id_facilities_5"><input type="checkbox" name="facilities" value="6" id="id_facilities_5" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ FULL BAR FACILITY</label>
+
+</li>
+    <li><label for="id_facilities_6"><input type="checkbox" name="facilities" value="7" id="id_facilities_6" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ WI-FI</label>
+
+</li>
+    <li><label for="id_facilities_7"><input type="checkbox" name="facilities" value="8" id="id_facilities_7" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ SMOKING ZONE</label>
+
+</li>
+    <li><label for="id_facilities_8"><input type="checkbox" name="facilities" value="9" id="id_facilities_8" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ FREE PARKING</label>
+
+</li>
+    <li><label for="id_facilities_9"><input type="checkbox" name="facilities" value="10" id="id_facilities_9" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ PAID PARKING</label>
+
+</li>
+    <li><label for="id_facilities_10"><input type="checkbox" name="facilities" value="11" id="id_facilities_10" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ VALET PARKING</label>
+
+</li>
+    <li><label for="id_facilities_11"><input type="checkbox" name="facilities" value="12" id="id_facilities_11" placeholder="facilities of the Vendor" class="form-control" maxlength="250" />
+ SOCIAL EVENTS / PARTIES</label>
+
+</li>
+</ul>
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendors cost for two</label> 
+                </div>
+                <div class="col-sm-8">
+                <select name="cost_for_two" id="id_cost_for_two" placeholder="cost_for_two of the Vendor" class="form-control" maxlength="250">
+  <option value="1">0-500</option>
+
+  <option value="2">500-1000</option>
+
+  <option value="3">1000-2000</option>
+
+  <option value="4">2000 and above</option>
+
+</select>
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor contact person</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="contact_person" id="id_contact_person" placeholder="contact_person of the Vendor" class="form-control" maxlength="250" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Vendor contact person phone</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="text" name="phone_contact_person" placeholder="phone_contact_person of the Vendor" class="form-control" id="id_phone_contact_person" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Food menu</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="file" name="food_menu" id="id_food_menu" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Drinks menu</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="file" name="drinks_menu" id="id_drinks_menu" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Dessert menu</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="file" name="dessert_menu" id="id_dessert_menu" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                    <label > Cafe menu</label> 
+                </div>
+                <div class="col-sm-8">
+                <input type="file" name="cafe_menu" id="id_cafe_menu" />
+                </div>
+                
+            </div>
+            <br>
+            
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="domain">Send Registraion Mail</label>
+
+                <div class="col-sm-8">
+                <input id="registraionMail" name="registraionMail" type="checkbox"  class="checkbox" style="width: 30px; height: 30px; margin-left: 25px;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+
+
+
+  </div>
+
+{% include "footer2.html" %}
+
+{% endblock %}
