@@ -1,22 +1,83 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
+{% extends "base.html" %}
 {% block content %}
+{% include "header.html" %}
+{% load staticfiles %}
 <style type="text/css">
-    li {
-    display: inline-block !important;
-    margin-right: 20px;
-    }
+	h4 {
+		display: inline-block;
+		width: 30%;
+	}
 </style>
 
-<h1>{{ object.name }}</h1>
-<h1>{{ object.address }}</h1>
-<h1>{{ object.phone }}</h1>
-<h1>{{ object.image }}</h1>
-<h1>{{ object.email }}</h1>
-<h1>{{ object.timings }}</h1>
-<h1>{{ object.category }}</h1>
-<h1>{{ object.cuisines }}</h1>
-<h1>{{ object.special_offerings }}</h1>
-<p>Date: {{ now|date }}</p>
+<div class="container">
+<div class="row">
+<h2>Cover Photo</h2>
+	<div class="col-sm-10 col-md-10">
+		<div class="thumbnail">
+			<img src="/media/{{ object.cover_photo }}" alt="...">
+		</div>
+	</div>
+</div>
+<div class="row">
+<h3>Name : {{ object.name }}</h3>
+<h4>Address :  {{ object.address }}</h4>
+<h4>Phone : {{ object.phone }}</h4>
+<h4>Email : {{ object.email }}</h4>
+<h4>Website Url : {{ object.web_url }}</h4>
+<h4>Latitude : {{ object.latitude }}</h4>
+<h4>Longitude : {{ object.longitude }}</h4>
+<h4>Description : {{ object.description }}</h4>
+<!-- <h4>Category : {{ object.category }}</h4>
+<h4>Cuisines : {{ object.cuisines }}</h4>
+<h4>Special Offerings : {{ object.special_offerings }}</h4> -->
+</div>
+<br>
+<div class="row">
+	<div class="col-sm-3 col-md-3">
+		<div class="thumbnail">
+			<img src="/media/{{ object.food_menu }}" alt="...">
+		</div>
+	</div>
+	<div class="col-sm-3 col-md-3">
+		<div class="thumbnail">
+			<img src="/media/{{ object.drinks_menu }}" alt="...">
+		</div>
+	</div>
+	<div class="col-sm-3 col-md-3">
+		<div class="thumbnail">
+			<img src="/media/{{ object.dessert_menu }}" alt="...">
+		</div>
+	</div>
+	<div class="col-sm-3 col-md-3">
+		<div class="thumbnail">
+			<img src="/media/{{ object.cafe_menu }}" alt="...">
+		</div>
+	</div>
+</div>
+<h3><b> Timings:</b></h3>
 
+
+<h4><b> Mon </b> Opening : {{ object.mon_op_timings }} Closing : {{ object.mon_close_timings }}</h4>
+<h4><b>Tues</b> Opening : {{ object.tues_op_timings }} Closing : {{ object.tues_close_timings }}</h4>
+<h4><b> Wed </b> Opening : {{ object.wed_op_timings }} Closing : {{ object.wed_close_timings }}</h4>
+<h4><b>Thurs</b> Opening : {{ object.thurs_op_timings }} Closing : {{ object.thurs_close_timings }}</h4>
+<h4><b> Fri </b> Opening : {{ object.fri_op_timings }} Closing : {{ object.fri_close_timings }}</h4>
+<h4><b> Sat </b> Opening : {{ object.sat_op_timings }} Closing : {{ object.sat_close_timings }}</h4>
+<h4><b> Sun </b> Opening : {{ object.sun_op_timings }} Closing : {{ object.sun_close_timings }}</h4>
+<br>
+<!-- <h4>{{ object.category }}</h4>
+<h4>{{ object.cuisines }}</h4>
+<h4>{{ object.ambience }}</h4>
+<h4>{{ object.special_offerings }}</h4>
+<h4>{{ object.ordering_options }}</h4>
+<h4>{{ object.cost_for_two }}</h4> -->
+<!-- <h4>{{ object.payment_modes }}</h4>
+<h4>{{ object.facilities }}</h4> -->
+
+<h4>Contact Person :  {{ object.contact_person }}</h4>
+<h4>Phone no. :  {{ object.phone_contact_person }}</h4>
+<br><br>
+
+</div>
+{% include "footer2.html" %}
 {% endblock %}

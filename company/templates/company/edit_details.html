@@ -9,10 +9,16 @@
         </div>
     </div>
 
+
+ {% if form.errors %}
+<div class="alert alert-danger" role="alert">
+    <a href="#" class="alert-link">   {{ form.errors }}</a>
+</div>
+{% endif %}
     <div class="container-fluid">
         <!-- accordion section strat from here -->
         <div class="row">
-            <form class="form-horizontal">
+            <form class="form-horizontal"  method="post" enctype="multipart/form-data">{% csrf_token %}
                 <div class="accordion-custom">
                     <h1>Basic Vendor Profile</h1>
                     <div>
@@ -569,7 +575,7 @@
                                                     <div>
                                                         <img src="/static/img/casual-dining.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="casualdining" id="casualdining"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>casual dining</span>
+                                                    <input type="checkbox" name="ambience" value="1" id="id_ambience_0" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>casual dining</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -580,7 +586,7 @@
                                                     <div>
                                                         <img src="/static/img/fine-dining.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="finedining" id="finedining"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>fine dining</span>
+                                                    <input type="checkbox" name="ambience" value="2" id="id_ambience_1" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" /></i><i class="fa fa-dot-circle-o fa-2x"></i><span>fine dining</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -591,7 +597,7 @@
                                                     <div>
                                                         <img src="/static/img/rooftop-dining.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="rooftopdining" id="rooftopdining"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>rooftop dining</span>
+                                                    <input type="checkbox" name="ambience" value="4" id="id_ambience_3" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>rooftop dining</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -602,7 +608,7 @@
                                                     <div>
                                                         <img src="/static/img/poolside-lounge.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="poolsidelounge" id="poolsidelounge"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>poolside lounge</span>
+                                                    <input type="checkbox" name="ambience" value="5" id="id_ambience_4" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>poolside lounge</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -613,7 +619,7 @@
                                                     <div>
                                                         <img src="/static/img/private-dining.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="privatedining" id="privatedining"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>private dining</span>
+                                                    <input type="checkbox" name="ambience" value="3" id="id_ambience_2" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>private dining</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -624,7 +630,7 @@
                                                     <div>
                                                         <img src="/static/img/live-music.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="livemusic" id="livemusic"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>live music</span>
+                                                    <input type="checkbox" name="ambience" value="6" id="id_ambience_5" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" /></i><i class="fa fa-dot-circle-o fa-2x"></i><span>live music</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -635,7 +641,7 @@
                                                     <div>
                                                         <img src="/static/img/loud-dj-music.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="louddjmusic" id="louddjmusic"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>loud dj music</span>
+                                                    <input type="checkbox" name="ambience" value="7" id="id_ambience_6" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>loud dj music</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -656,7 +662,7 @@
                                                     <div>
                                                         <img src="/static/img/dance-floor.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="dancefloor" id="dancefloor"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>dance floor</span>
+                                                    <input type="checkbox" name="ambience" value="8" id="id_ambience_7" placeholder="Ambience of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>dance floor</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -671,7 +677,16 @@
                             <div class="form-group">
                                 <label for="foodfortwo" class="col-sm-3 control-label">food for two</label>
                                 <div class="col-sm-9 gd-input-control">
-                                    <input type="text" class="form-control" id="foodfortwo" placeholder="">
+                                    <select name="cost_for_two" id="id_cost_for_two" placeholder="cost_for_two of the Vendor" class="form-control" maxlength="250">
+                                      <option value="1">0-500</option>
+
+                                      <option value="2">500-1000</option>
+
+                                      <option value="3">1000-2000</option>
+
+                                      <option value="4">2000 and above</option>
+
+                                    </select>
                                 </div>
                             </div>
 
@@ -706,7 +721,7 @@
                                                         <div>
                                                             <img src="/static/img/cash-payment.png" class="img-responsive">
                                                         </div>
-                                                        <input type="checkbox" name="cashpayment" id="cashpayment"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>cash payment</span>
+                                                        <input type="checkbox" name="payment_modes" value="1" id="id_payment_modes_0" placeholder="payment_modes of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>cash payment</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -717,7 +732,7 @@
                                                         <div>
                                                             <img src="/static/img/card-payment.png" class="img-responsive">
                                                         </div>
-                                                        <input type="checkbox" name="cardpayment" id="cardpayment"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>card payment</span>
+                                                        <input type="checkbox" name="payment_modes" value="2" id="id_payment_modes_1" placeholder="payment_modes of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>card payment</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -728,7 +743,7 @@
                                                         <div>
                                                             <img src="/static/img/mobile-wallet.png" class="img-responsive">
                                                         </div>
-                                                        <input type="checkbox" name="mobilewallet" id="mobilewallet"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>mobile wallet</span>
+                                                        <input type="checkbox" name="payment_modes" value="3" id="id_payment_modes_2" placeholder="payment_modes of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>mobile wallet</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -739,7 +754,7 @@
                                                         <div>
                                                             <img src="/static/img/coupons.png" class="img-responsive">
                                                         </div>
-                                                        <input type="checkbox" name="coupons" id="coupons"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>coupons</span>
+                                                        <input type="checkbox" name="payment_modes" value="4" id="id_payment_modes_3" placeholder="payment_modes of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>coupons</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -763,7 +778,7 @@
                                                     <div>
                                                         <img src="/static/img/full-veggie.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="fullveggie" id="fullveggie"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>full veggie</span>
+                                                    <input type="checkbox" name="facilities" value="1" id="id_facilities_0" placeholder="facilities of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>full veggie</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -774,7 +789,7 @@
                                                     <div>
                                                         <img src="/static/img/fish-n-meat.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="fishnmeat" id="fishnmeat"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>fish n meat</span>
+                                                    <input type="checkbox" name="facilities" value="2" id="id_facilities_1" placeholder="facilities of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>fish n meat</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -785,7 +800,7 @@
                                                     <div>
                                                         <img src="/static/img/smoking-zone.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="smokingzone" id="smokingzone"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>smoking zone</span>
+                                                    <input type="checkbox" name="facilities" value="8" id="id_facilities_7" placeholder="facilities of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>smoking zone</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -796,7 +811,7 @@
                                                     <div>
                                                         <img src="/static/img/wi-fi-facility.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="wififacility" id="wififacility"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>wi-fi facility</span>
+                                                    <input type="checkbox" name="facilities" value="7" id="id_facilities_6" placeholder="facilities of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>wi-fi facility</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -806,7 +821,7 @@
                                                     <div>
                                                         <img src="/static/img/free-parking.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="freeparking" id="freeparking"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>free parking</span>
+                                                    <input type="checkbox" name="facilities" value="9" id="id_facilities_8" placeholder="facilities of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>free parking</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -817,7 +832,7 @@
                                                     <div>
                                                         <img src="/static/img/paid-parking.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="paidparking" id="paidparking"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>paid parking</span>
+                                                    <input type="checkbox" name="facilities" value="10" id="id_facilities_9" placeholder="facilities of the Vendor" class="form-control" maxlength="250" /></i><i class="fa fa-dot-circle-o fa-2x"></i><span>paid parking</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -828,7 +843,7 @@
                                                     <div>
                                                         <img src="/static/img/valet-parking.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="valetparking" id="valetparking"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>valet parking</span>
+                                                    <input type="checkbox" name="facilities" value="11" id="id_facilities_10" placeholder="facilities of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>valet parking</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -839,7 +854,7 @@
                                                     <div>
                                                         <img src="/static/img/social-events.png" class="img-responsive">
                                                     </div>
-                                                    <input type="checkbox" name="socialevents" id="socialevents"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>social events</span>
+                                                    <input type="checkbox" name="facilities" value="12" id="id_facilities_11" placeholder="facilities of the Vendor" class="form-control" maxlength="250" /><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span>social events</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -855,22 +870,31 @@
                             <div class="form-group">
                                 <label for="ownername" class="col-sm-3 control-label">Name</label>
                                 <div class="col-sm-9 gd-input-control">
-                                    <input type="text" class="form-control" id="ownername" placeholder="">
+                                    <input type="text" name="contact_person" id="id_contact_person" placeholder="contact_person of the Vendor" class="form-control" maxlength="250" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="ownerpnone" class="col-sm-3 control-label">Phone</label>
                                 <div class="col-sm-9 gd-input-control">
-                                    <input type="tel" class="form-control" id="ownerpnone" placeholder="">
+                                    <input type="text" name="phone_contact_person" placeholder="phone_contact_person of the Vendor" class="form-control" id="id_phone_contact_person" />
                                 </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
+
+
+                <div class="row">
+                    <div class="col-md-12 pre-footer">
+                        <p class="text-center">
+                            <input type="submit" class="btn btn-primary btn-lg gd-main-color" value="Create My DROWSE Profile">
+                        </p>
+                    </div>
+                </div>
+            </form>
         </div>
 
 {% include "footer2.html" %}
-
 {% endblock %}
