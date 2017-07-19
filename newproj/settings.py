@@ -116,8 +116,6 @@ WSGI_APPLICATION = 'newproj.wsgi.application'
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
-
 DATABASES = {
   'default': {
       'ENGINE': 'django.db.backends.mysql',
@@ -128,7 +126,9 @@ DATABASES = {
       'PASSWORD': 'rootDB123'
   }
 }
-
+# mysql -u newuser -p
+# use drowse_db ;
+# ALTER TABLE company_tblvendor ADD food_menu varchar(100);
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
