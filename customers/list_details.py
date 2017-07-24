@@ -43,12 +43,12 @@ def list_vendors(request):
 		longs = item.longitude
 		if latitude and longitude  and lats  and longs :
 			distance = haversine(latitude,longitude,lats,longs)
-			if distance < 10 :
+			if distance < 100 :
 				distance = round(distance,1)
 				image = ""
-				if item.image :
-					image = str(request.META['HTTP_HOST']) + "/media/" + str(item.image)
-				vendor_dict = {'distance':distance,'name' : item.name ,'email' : item.email ,'web_url' : item.web_url ,'latitude' : item.latitude ,'longitude' : item.longitude ,'image' : image }
+				if item.cover_photo :
+					image = str(request.META['HTTP_HOST']) + "/media/" + str(item.cover_photo)
+				vendor_dict = {'vendor_id':item.id,'distance':distance,'name' : item.name ,'email' : item.email ,'web_url' : item.web_url ,'latitude' : item.latitude ,'longitude' : item.longitude ,'image' : image }
 				vendorList.append(vendor_dict)
 				message = "Data loaded successfuly"
 				statusSet = 1
@@ -73,7 +73,9 @@ def home_page_details(request):
 		dataObj = TblData.objects.filter(cat_type = items[0])
 		dataList2 = []
 		for item in dataObj : 
-			image = str(request.META['HTTP_HOST']) + "/media/" + str(item.image)
+			image = ""
+			if item.image :
+				image = str(request.META['HTTP_HOST']) + "/media/" + str(item.image)
 			dataDict =  {"category_type":str(item.cat_type),"category_name":str(item.cat_name),"display_name":str(item.display_name),"image_url":image}
 			dataList2.append(dataDict)
 		datadict2 =  {"type": items[0],"list" : dataList2 }
