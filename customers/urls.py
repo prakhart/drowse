@@ -12,9 +12,11 @@ urlpatterns = [
 	url(r'^register/', register, name='register'),
 	url(r'^sendotp/', sendotp, name='sendotp'),
 	url(r'^list_vendors/', list_vendors, name='list_vendors'),
+	url(r'^vendor_details/', vendor_details, name='vendor_details'),
 	url(r'^home_page_details/', home_page_details, name='home_page_details'),
-	 
+	url(r'^list_category_vendors/', list_category_vendors, name='list_category_vendors'),
 
-	
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
