@@ -156,13 +156,13 @@ def vendor_details(request):
 		if item.cover_photo :
 			cover_photo = str(request.META['HTTP_HOST']) + "/media/" + str(item.cover_photo)
 		if item.food_menu :
-			image = str(request.META['HTTP_HOST']) + "/media/" + str(item.food_menu)
+			food_menu = str(request.META['HTTP_HOST']) + "/media/" + str(item.food_menu)
 		if item.drinks_menu :
-			image = str(request.META['HTTP_HOST']) + "/media/" + str(item.drinks_menu)	
+			drinks_menu = str(request.META['HTTP_HOST']) + "/media/" + str(item.drinks_menu)	
 		if item.dessert_menu :
-			image = str(request.META['HTTP_HOST']) + "/media/" + str(item.dessert_menu)	
+			dessert_menu = str(request.META['HTTP_HOST']) + "/media/" + str(item.dessert_menu)	
 		if item.cafe_menu :
-			image = str(request.META['HTTP_HOST']) + "/media/" + str(item.cafe_menu)	
+			cafe_menu = str(request.META['HTTP_HOST']) + "/media/" + str(item.cafe_menu)	
 
 		vendor_dict = {
 				"vendor_id":item.id,
