@@ -155,6 +155,8 @@ def vendor_details(request):
 
 		if item.cover_photo :
 			cover_photo = str(request.META['HTTP_HOST']) + "/media/" + str(item.cover_photo)
+
+
 		if item.food_menu :
 			food_menu = str(request.META['HTTP_HOST']) + "/media/" + str(item.food_menu)
 		if item.drinks_menu :
@@ -163,6 +165,52 @@ def vendor_details(request):
 			dessert_menu = str(request.META['HTTP_HOST']) + "/media/" + str(item.dessert_menu)	
 		if item.cafe_menu :
 			cafe_menu = str(request.META['HTTP_HOST']) + "/media/" + str(item.cafe_menu)	
+
+		menu_list = [{	
+					"food_menu" : food_menu,
+					"drinks_menu" : drinks_menu,
+					"dessert_menu" : dessert_menu,
+					"cafe_menu" : cafe_menu
+					}]
+
+		timing_list = [ 
+						{
+						"day" :"Monday",
+						"opening_timing" : item.mon_op_timings,
+						"closing_timing" : item.mon_close_timings,
+						},
+						{
+						"day" :"Tuesday",
+						"opening_timing" : item.tues_op_timings,
+						"closing_timing" : item.tues_close_timings,
+						},
+						{
+						"day" :"Wednesday",
+						"opening_timing" : item.wed_op_timings,
+						"closing_timing" : item.wed_close_timings,
+						},
+						{
+						"day" :"Thursday",
+						"opening_timing" : item.thurs_op_timings,
+						"closing_timing" : item.thurs_close_timings,
+						},
+						{
+						"day" :"Friday",
+						"opening_timing" : item.fri_op_timings,
+						"closing_timing" : item.fri_close_timings,
+						},
+						{
+						"day" :"Saturday",
+						"opening_timing" : item.sat_op_timings,
+						"closing_timing" : item.sat_close_timings,
+						},
+						{
+						"day" :"Sunday",
+						"opening_timing" : item.sun_op_timings,
+						"closing_timing" : item.sun_close_timings,
+						}
+					]
+
 
 		vendor_dict = {
 				"vendor_id":item.id,
@@ -173,24 +221,8 @@ def vendor_details(request):
 				'latitude' : item.latitude ,
 				'longitude' : item.longitude ,
 				'image' : cover_photo,
-				"mon_op_timings" : item.mon_op_timings,
-				"mon_close_timings" : item.mon_close_timings,
-				"tues_op_timings" : item.tues_op_timings,
-				"tues_close_timings" : item.tues_close_timings,
-				"wed_op_timings" : item.wed_op_timings,
-				"wed_close_timings" : item.wed_close_timings,
-				"thurs_op_timings" : item.thurs_op_timings,
-				"thurs_close_timings" : item.thurs_close_timings,
-				"fri_op_timings" : item.fri_op_timings,
-				"fri_close_timings" : item.fri_close_timings,
-				"sat_op_timings" : item.sat_op_timings,
-				"sat_close_timings" : item.sat_close_timings,
-				"sun_op_timings" : item.sun_op_timings,
-				"sun_close_timings" : item.sun_close_timings,
-				"food_menu" : food_menu,
-				"drinks_menu" : drinks_menu,
-				"dessert_menu" : dessert_menu,
-				"cafe_menu" : cafe_menu,
+				"menu_list" : menu_list,
+				"timing_list" : timing_list,
 				"category" : item.category,
 				"cuisines" : item.cuisines,
 				"ambience" : item.ambience,
