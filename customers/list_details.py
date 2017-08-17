@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework import status
 import json
+import ast
 from extras import constants
 from math import radians,sin,cos,asin,sqrt
 from rest_framework import serializers
@@ -135,7 +136,6 @@ def vendor_details(request):
 	latitude = loadedJsonData.get('latitude')
 	longitude = loadedJsonData.get('longitude')
 	vendorObject = TblVendor.objects.filter(id = vendor_id)
-	print vendorObject,'ewefsf'
 	vendorList = []
 	message = "No data available"
 	statusSet = 0
@@ -153,10 +153,44 @@ def vendor_details(request):
 		dessert_menu = ""
 		cafe_menu = ""
 
+		category_list = []
+		cuisines_list = []
+		ambience_list = []
+		special_offerings_list = []
+		cost_for_two_list = []
+		payment_modes_list = []
+		facilities_list = []
+
+		category = ast.literal_eval(item.category)
+		cuisines = ast.literal_eval(item.cuisines)
+		ambience = ast.literal_eval(item.ambience)
+		special_offerings = ast.literal_eval(item.special_offerings)
+		payment_modes = ast.literal_eval(item.payment_modes)
+		facilities = ast.literal_eval(item.facilities)
+
+		for i in category :
+			i = str(i)
+			category_list.append( {"id":i,"type": constants.category_dict[i]})
+		for i in cuisines :
+			i = str(i)
+			cuisines_list.append( {"id":i,"type": constants.cuisines_dict[i]})
+		for i in ambience :
+			i = str(i)
+			ambience_list.append( {"id":i,"type": constants.ambience_dict[i]})
+		for i in special_offerings :
+			i = str(i)
+			special_offerings_list.append( {"id":i,"type": constants.special_offerings_dict[i]})
+
+		cost_for_two_list.append( {"id":i,"type": constants.cost_for_two_dict[item.cost_for_two]})
+		for i in payment_modes :
+			i = str(i)
+			payment_modes_list.append( {"id":i,"type": constants.payment_modes_dict[i]})
+		for i in facilities :
+			i = str(i)
+			facilities_list.append( {"id":i,"type": constants.facilities_dict[i]})
+
 		if item.cover_photo :
 			cover_photo = str(request.META['HTTP_HOST']) + "/media/" + str(item.cover_photo)
-
-
 		if item.food_menu :
 			food_menu = str(request.META['HTTP_HOST']) + "/media/" + str(item.food_menu)
 		if item.drinks_menu :
@@ -223,14 +257,14 @@ def vendor_details(request):
 				'image' : cover_photo,
 				"menu_list" : menu_list,
 				"timing_list" : timing_list,
-				"category" : item.category,
-				"cuisines" : item.cuisines,
-				"ambience" : item.ambience,
-				"special_offerings" : item.special_offerings,
+				"category" : category_list,
+				"cuisines" : cuisines_list,
+				"ambience" : ambience_list,
+				"special_offerings" : special_offerings_list,
 				"ordering_options" : item.ordering_options,
-				"cost_for_two" : item.cost_for_two,
-				"payment_modes" : item.payment_modes,
-				"facilities" : item.facilities,
+				"cost_for_two" : cost_for_two_list,
+				"payment_modes" : payment_modes_list,
+				"facilities" : facilities_list,
 				"contact_person" : item.contact_person,
 				"phone_contact_person" : item.phone_contact_person,
 				"address" : item.address,
