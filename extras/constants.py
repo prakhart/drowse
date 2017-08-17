@@ -152,6 +152,7 @@ special_offerings_dict = {
     "8":"LADIES NIGHT OUT",
     "9":"LIVE SPORTS STREAMING",
     "9":"Special Parties",
+    "10":"Authentic Seafood",
     }
 
 
