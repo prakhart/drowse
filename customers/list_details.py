@@ -70,6 +70,7 @@ def home_page_details(request):
 	loadedJsonData = json.loads(request.body)
 	dataList1 = []
 	dataObj = TblData.objects.values_list('cat_type').distinct()
+	print dataObj,'sqdqed'
 	for items in dataObj :
 		dataObj = TblData.objects.filter(cat_type = items[0])
 		dataList2 = []
@@ -77,7 +78,7 @@ def home_page_details(request):
 			image = ""
 			if item.image :
 				image = str(request.META['HTTP_HOST']) + "/media/" + str(item.image)
-			dataDict =  {"category_type":str(item.cat_type),"category_name":str(item.cat_name),"display_name":str(item.display_name),"image_url":image}
+			dataDict =  {"category_id":item.id,"category_type":str(item.cat_type),"category_name":str(item.cat_name),"display_name":str(item.display_name),"image_url":image}
 			dataList2.append(dataDict)
 		datadict2 =  {"type": items[0],"list" : dataList2 }
 		dataList1.append(datadict2)

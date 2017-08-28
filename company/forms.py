@@ -242,9 +242,6 @@ class AddVendor(forms.ModelForm):
             'sun_close_timings': forms.TextInput(
                 attrs={'class': 'form-control input-small timepicker1', 
                        'placeholder': 'close_timings of the Vendor'}), 
-
-
-        
             }
 
         labels = {
