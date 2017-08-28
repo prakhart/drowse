@@ -108,11 +108,11 @@ def list_category_vendors(request):
 		category_type = catagory_data[0].cat_type
 		display_name = catagory_data[0].display_name
 		if category_type == "category" :
-			input_dict = category_dict
+			input_dict = constants.category_dict
 		elif  category_type == "ambience" :
-			input_dict = ambience_dict
+			input_dict = constants.ambience_dict
 		elif  category_type == "special_offerings" :
-			input_dict = special_offerings_dict
+			input_dict = constants.special_offerings_dict
 		for key, value in input_dict.iteritems():
 			if value.lower() == display_name.lower() :
 				category_key = key
