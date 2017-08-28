@@ -97,25 +97,48 @@ def home_page_details(request):
 @api_view(['POST'])
 @csrf_exempt
 def list_category_vendors(request):
+	message = "No data available"
+	statusSet = 0
 	loadedJsonData = json.loads(request.body)
 	latitude = loadedJsonData.get('latitude')
 	longitude = loadedJsonData.get('longitude')
-	category = loadedJsonData.get('category')
+	category_id = loadedJsonData.get('category_id')
+	catagory_data = TblData.objects.filter(id=category_id)
+	if len(catagory_data) > 0:
+		category_type = catagory_data[0].category_type
+		display_name = catagory_data[0].display_name
+		if category_type == "category" :
+			input_dict = category_dict
+		elif  category_type == "ambience" :
+			input_dict = ambience_dict
+		elif  category_type == "special_offerings" :
+			input_dict = special_offerings_dict
+		for key, value in input_dict.iteritems():
+			if value.lower() == display_name.lower() :
+				category_key = key
+	else :
+		content = {
+	        'status' : statusSet,
+	        'responseCode': status.HTTP_200_OK,
+	        'message' : message,
+	        'data' : [],
+	        }
+		return Response(content)
+
 	vendorObject = TblVendor.objects.all()
 	vendorList = []
-	message = "No data available"
-	statusSet = 0
+	
 	for item in vendorObject :
 		lats = item.latitude
 		longs = item.longitude
 		if latitude and longitude  and lats  and longs :
 			distance = haversine(latitude,longitude,lats,longs)
-			if distance < 100  and category in item.category:
+			if distance < 100  and category_key in eval("item."+category_type):
 				distance = round(distance,1)
 				image = ""
 				if item.cover_photo :
 					image = str(request.META['HTTP_HOST']) + "/media/" + str(item.cover_photo)
-				vendor_dict = {'distance':distance,'name' : item.name ,'email' : item.email ,'web_url' : item.web_url ,'latitude' : item.latitude ,'longitude' : item.longitude ,'image' : image }
+				vendor_dict = {"vendor_id":item.id,'distance':distance,'name' : item.name ,'email' : item.email ,'web_url' : item.web_url ,'latitude' : item.latitude ,'longitude' : item.longitude ,'image' : image }
 				vendorList.append(vendor_dict)
 				message = "Data loaded successfuly"
 				statusSet = 1
