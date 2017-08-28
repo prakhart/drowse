@@ -105,7 +105,7 @@ def list_category_vendors(request):
 	category_id = loadedJsonData.get('category_id')
 	catagory_data = TblData.objects.filter(id=category_id)
 	if len(catagory_data) > 0:
-		category_type = catagory_data[0].category_type
+		category_type = catagory_data[0].cat_type
 		display_name = catagory_data[0].display_name
 		if category_type == "category" :
 			input_dict = category_dict
