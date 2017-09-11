@@ -8,6 +8,8 @@ import hashlib
 import string
 import random
 from django.template import Context
+from django.contrib.auth.decorators import login_required
+
 
 def edit_details(request):
     form = AddVendor(request.POST or None,request.FILES  or None)
@@ -35,6 +37,16 @@ def edit_details(request):
 def index(request):
 	return render(request,'index.html',{"foo":"bar"})
 
+
+
+
+
+
+
+
+def dashboard(request):
+    return render(request,'company/dashboard.html',{"foo":"bar"})
+    
 def VendorListView(request):
 
     object_list = TblVendor.objects.all()

@@ -1,0 +1,913 @@
+">">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Go Drowse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery-3.1.1.slim.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body class="dashboard-body">
+    <header>
+      <nav class="navbar navbar-inverse gd-main-bg-color">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="images/logo.png" alt="Go Drowse"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse text-right">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="posts.html">Drowse Posts</a></li>
+              <li><a href="#footer">Contact Us</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-success" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                  <div class="col-lg-12">
+                    <div class="text-center">
+                      <h3><b>Vendor Login</b></h3>
+                    </div>
+                    <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post" role="form" autocomplete="off">
+                      <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-xs-7">
+                            <input type="checkbox" tabindex="3" name="remember" id="remember">
+                            <label for="remember"> Remember Me</label>
+                          </div>
+                          <div class="col-xs-5 pull-right">
+                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="text-right">
+                              <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                              <p>Not a Drowse Partner?</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="text-center">
+                              <a href="#" tabindex="5" class="gd-custom-button" data-toggle="modal" data-target="#goModal2">Be a Drowse Partner</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                    </form>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--/.navbar-collapse -->
+        </div>
+      </nav>
+    </header>
+    <div class="pd-top"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+          <div class="barcelos_hdng">Barcelos</div>
+          <div class="barcelos-text">
+            <div class="location-title">sector 29, gurgaon 
+              <span>“This place is meant for large parties and fresh draught beer!! ”</span>
+            </div>
+            <p class="text2">We would love to introduce us as the biggest partying chain of the city, with more than 7 pubs right here in Delhi NCR. We are widely known for the fresh beer we brew and serve...</p>
+            <!--
+              <p class="text2">We would love to introduce us as the biggest partying chain of the city, with more than 7 pubs right here in Delhi NCR. We are widely known for the fresh beer we brew and serve, the immense range of cocktails and the awesome little dance floor we have for the party animals !!</p>-->
+            <button type="button" class="btn edit-info btn-sm">edit info</button>
+            <div class="clearfix"></div>
+            <p class="text3">Ratings &amp; Reviews</p>
+            <div class="rating-box-outer">
+              <div class="rating-box">
+                <div class="rating-number">3.9</div>
+                <div class="rating-text">user <strong>ratings</strong></div>
+              </div>
+              <div class="rating-box">
+                <div class="rating-number">228</div>
+                <div class="rating-text">user <strong>reviews</strong></div>
+              </div>
+              <div class="rating-box">
+                <div class="rating-number">546</div>
+                <div class="rating-text">user <strong>cravings</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
+          <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+              <div class="dashboard_bnr"><img src="images/dashboard_bnr1.jpg" alt="" /></div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="search-box">
+                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
+              </div>
+              <div class="search-box">
+                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
+              </div>
+              <div class="search-box">
+                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
+              </div>
+              <div class="search-box">
+                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pd-top"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+          <div class="vendor-dashboard">
+            <p class="vendor-hdng">Vendor <span>Dashboard</span></p>
+            <ul class="vendor-dashboard-list">
+              <li>
+                <a href="profile-detail.html">Vendor Profile</a>
+                <ul>
+                  <li><a href="profile-edit.html">Edit Profile</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="index.html">Flexible Happy Hours</a>    
+                <ul>
+                  <li><a href="index.html#happy-hour-deal">Upload a happy hour deal</a></li>
+                  <li><a href="index.html#happy-hour-notifications">happy hour notifications</a></li>
+                  <li><a href="index.html#happy-hour-performance">happy hour performance</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="plan-your-coupons.html" class="active-vendor-list">Plan your Coupons</a>
+                <ul>
+                  <li><a href="plan-your-coupons.html#promote-coupons">Promote coupons</a></li>
+                  <li><a href="plan-your-coupons.html#active-coupons-for-sale">Active coupons for sale</a></li>
+                  <li><a href="plan-your-coupons.html#coupons-notifications">Coupons notifications</a></li>
+                  <li><a href="plan-your-coupons.html#coupons-performance">Coupons performance</a></li>
+                </ul>
+              </li>
+              <!-- 
+                <li><a href="performance-analysis.html">Performance Analysis</a>
+                <ul>
+                 <li><a href="performance-analysis.html#drowse-business-leads">Drowse business leads</a></li>
+                 <li><a href="performance-analysis.html#user-impressions">User impressions</a></li>
+                 <li><a href="performance-analysis.html#respond-to-user-reviews">Respond to user reviews</a></li>
+                 </ul>
+                </li>
+                
+                
+                <li><a href="#">Pricing, Payments and Invoice</a>
+                <ul>
+                 <li><a href="#">Activate features</a></li>
+                 <li><a href="#">Payment &amp; pricing terms</a></li>
+                 <li><a href="#">All invoices</a></li>
+                 </ul>
+                </li>
+                -->
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
+          <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+              <div class="hdng1">Plan<span> your Coupons</span></div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="row">
+                <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                  <button type="button" class="btn btn-success">Drowse News</button>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                  <button type="button" class="btn btn-success">F.A.Q.s</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="content-box">
+                <div class="panel-box">
+                  <div class="hdng2" id="promote-coupons">promote <span>coupons</span></div>
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                          <div class="form-group">
+                            
+                            <select class="form-control" id="exampleSelect1">
+                              <option>Choose an earlier coupon</option>
+                              <option>Choose an earlier coupon</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12">
+                          <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer name">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                      <div class="form-group">
+                        <label for="exampleSelect1"><strong>Discount</strong></label>
+                        <select class="form-control" id="exampleSelect1">
+                          <option>10%</option>
+                          <option>20%</option>
+                          <option>30%</option>
+                          <option>40%</option>
+                          <option>50%</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                      <div class="form-group">
+                        <label for="exampleSelect1"><strong>Applicable on</strong></label>
+                        <select class="form-control" id="exampleSelect1">
+                          <option>All Alcohols</option>
+                          <option>All Non Alcohols</option>
+                          <option>Only Beers</option>
+                          <option>Only IMFL</option>
+                          <option>Only Cocktails</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                      <div class="form-group">
+                        <label for="exampleSelect1"><strong>Valid for</strong></label>
+                        <select class="form-control" id="exampleSelect1">
+                          <option>1 person / coupon </option>
+                          <option>2 person / coupon </option>
+                          <option>3 person / coupon</option>
+                          <option>4 person / coupon</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row valid-checkbox">
+                    <div class="col-sm-12 col-md-12">
+                      <div class="form-group days-checkbox">
+                        <label for="exampleSelect1"><strong>Valid on which days</strong></label>
+                        <br />
+                        <ul class="days-list">
+                          <li>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Monday
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Tuesday
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Wednesday
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Thursday
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Friday
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Saturday
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Sunday
+                              </label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                      <label for="exampleInputEmail1"><strong>Coupon running date</strong></label>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                          <div class="form-group">
+                            <div class='input-group date' id='datetimepicker6'>
+                              <input type='text' class="form-control" placeholder="start date" id="dp1" />
+                              <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                          <div class="start-to2 text-center">to</div>
+                        </div>
+                        <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                          <div class="form-group">
+                            <div class='input-group date' id='datetimepicker7'>
+                              <input type='text' class="form-control" placeholder="end date" id="dp2"/>
+                              <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="repeat-box">
+                        <div class="valid-checkbox">
+                          <div class="form-group days-checkbox">
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Monday
+                              </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Tuesday
+                              </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Wednesday
+                              </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Thursday
+                              </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Friday
+                              </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Saturday
+                              </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Sunday
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                      <label for="exampleInputEmail1"><strong>Coupon pricing</strong></label>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="actual price INR">
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                      <label for="exampleInputEmail1"><strong>&nbsp;</strong></label>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer price INR">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <p></p>
+                      <div class="hdng3">select <span>terms and conditions</span></div>
+                      <div class="tmc">
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                          <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                            <div class="col-md-12">
+                              <ul class="tmc-list2">
+                                <li>
+                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <span class="tmc-span">The outlet is strict about timings and validity of offers. Please check your availability at the pub within the timings announced in the happy hour section, else the ticket would stand invalid, unless considered otherwise by the outlet.</span>
+                                </li>
+                                <li>
+                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <span class="tmc-span">Prior reservation recommended. This offer is only applicable through drowse tickets.</span>
+                                </li>
+                                <li>
+                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <span class="tmc-span">Once ticket is booked for a particular happy hour offer, it cannot be clubbed or exchanged with any other active / inactive offer.</span>
+                                </li>
+                                <li>
+                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <span class="tmc-span">The choice of hookah / drinks / food is based on availability and sole discretion of the pub management.</span>
+                                </li>
+                                <li>
+                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <span class="tmc-span">Sharing and packing of food not allowed. Not applicable only on platters and pitchers.</span>
+                                </li>
+                                <li>
+                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <span class="tmc-span">Offer not valid on all special days such as festivals, social events and public occasions, unless specified.</span>
+                                </li>
+                                <li>
+                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <span class="tmc-span">All local / national laws regarding legal drinking age stands valid for all drowse customers.</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <p></p>
+                  <div class="hdng3" style="margin-bottom: 3%;">upload <span>special offer menus</span></div>
+                  </div>
+                    <div class="multiple-browse">
+
+                      <div class="col-sm-12 col-md-6">
+                        <form action="/action_page.php">
+                          <div class="submit-browse"><input type="file" name="img" class="form-control" multiple=""></div>
+                          <div class="submit-browse2"> <input type="submit" class="btn btn-success"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-sm-12 col-md-3">
+                      <div class="form-check days-checkbox">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Remember this offer code 
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <div class="capcha"><img src="images/captcha.gif" alt=""/></div>
+                        <label for="exampleInputPassword1">Enter the code above here</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-7"></div>
+                    <div class="col-sm-12 col-md-2 proceed-btn-mrgn">
+                      <div class="btn-right">
+                        <a href="#" class="btn proceed-btn active" role="button" aria-pressed="true">Proceed</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="active-coupons-for-sale">active <span>coupons</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-+ col-lg-9 col-xl-9">
+                      <div class="active-coupons-box">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-+ col-lg-9 col-xl-9">
+                            <div class="acbr">
+                              <div class="hdng5">Buffet Lunch with 1 Soft Beverage/Mocktail</div>
+                              <div class="valid-for">Valid for: <strong>1 Person</strong>  Valid on: <strong>Mon, Tue, Wed, Thu, Fri</strong></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                            <div class="active-coupons-price">Rs 749.00</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                      <div class="coupons-sold-bottom">
+                        <p class="coupons-sold">40 Coupons Sold</p>
+                        <a href="#" class="btn btn-secondary btn-sm">Special offer menus</a>
+                        <a href="#" class="btn btn-secondary btn-sm">Terms and Conditions</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-+ col-lg-9 col-xl-9">
+                      <div class="active-coupons-box">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-+ col-lg-9 col-xl-9">
+                            <div class="acbr">
+                              <div class="hdng5">Buffet Dinner with 2 Beer / 2 IMFL / 2 Cocktails</div>
+                              <div class="valid-for">Valid for: <strong>2 Person</strong>  Valid on: <strong>Mon, Tue, Wed, Thu, Fri</strong></div>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                            <div class="active-coupons-price">Rs 1,199.00</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                      <div class="coupons-sold-bottom">
+                        <p class="coupons-sold">22 Coupons Sold</p>
+                        <a href="#" class="btn btn-secondary btn-sm">Special offer menus</a>
+                        <a href="#" class="btn btn-secondary btn-sm">Terms and Conditions</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-box">
+                  <div class="hdng2" id="coupons-notifications">coupon <span>notifications</span></div>
+                  <div class="row coupon-notifications-boxes">
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Mr. Prakhar Trivedi</strong> has booked a coupon for <strong>2 persons</strong> on <strong>offer code 
+                            BAR 30 - 30% OFF on Beer Pitchers.<br />
+                            Valid Till 15th July 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Mr. Saurabh Shukla</strong> has booked a coupon for <strong>5 persons</strong> on <strong>offer code 
+                            BAR 20 - 20% OFF on COCKTAILS and MOCKTAILS <br />Valid Till 15th May 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Ms. Meenakshi Dubey</strong> has booked a coupon for <strong>2 persons</strong> on <strong>offer code 
+                            BAR 60 - 30% OFF on Beer Pitchers - Ladies Night Out (Only Wednesdays).<br />
+                            Valid Till 20th June 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Mr. Prakhar Trivedi</strong> has booked a coupon for <strong>2 persons</strong> on <strong>offer code 
+                            BAR 30 - 30% OFF on Beer Pitchers.<br />
+                            Valid Till 15th July 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Mr. Saurabh Shukla</strong> has booked a coupon for <strong>5 persons</strong> on <strong>offer code 
+                            BAR 20 - 20% OFF on COCKTAILS and MOCKTAILS <br />Valid Till 15th May 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Ms. Meenakshi Dubey</strong> has booked a coupon for <strong>2 persons</strong> on <strong>offer code 
+                            BAR 60 - 30% OFF on Beer Pitchers - Ladies Night Out (Only Wednesdays).<br />
+                            Valid Till 20th June 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Mr. Prakhar Trivedi</strong> has booked a coupon for <strong>2 persons</strong> on <strong>offer code 
+                            BAR 30 - 30% OFF on Beer Pitchers.<br />
+                            Valid Till 15th July 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Mr. Saurabh Shukla</strong> has booked a coupon for <strong>5 persons</strong> on <strong>offer code 
+                            BAR 20 - 20% OFF on COCKTAILS and MOCKTAILS <br />Valid Till 15th May 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                      <div class="active-ticket-box">
+                        <div class="hdng4"><span>active</span> coupon</div>
+                        <div class="active-ticket-text">
+                          <p><strong>Ms. Meenakshi Dubey</strong> has booked a coupon for <strong>2 persons</strong> on <strong>offer code 
+                            BAR 60 - 30% OFF on Beer Pitchers - Ladies Night Out (Only Wednesdays).<br />
+                            Valid Till 20th June 2017</strong>
+                          </p>
+                        </div>
+                        <div class="active-coupon-bottom"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="close-ticket-box">
+                        <div class="form-group">
+                          <div class="close-ticket-inputs"><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter coupon code here"><span><a href="#" class="close-ticket-btn">Close Ticket</a></span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--
+                  <div class="panel-box">
+                  <div class="hdng2" id="coupons-performance">coupon <span>performance</span></div>
+                  <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                  </div>
+                  </div>
+                  
+                  <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="ticket-book-number">62</div>
+                  <div class="ticket-book-text">Total Coupons Booked in September</div>
+                  </div>
+                  </div>
+                  
+                  
+                  <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="hdng-inr">5,200 <span>INR</span></div>
+                  <div class="total-money"><strong>Total Money Spent</strong> (Through coupon promotions) <strong>in September</strong></div>
+                  </div>
+                  
+                  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="hdng-inr">52,570 <span>INR</span></div>
+                  <div class="total-money"><strong>Total Sales</strong> (Through coupons) <strong>in September</strong></div>
+                  </div>
+                  </div>
+                  
+                  </div>
+                  
+                  
+                  -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      <div class="container">
+      <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 bottom-hr">
+      <hr />
+      </div>
+      </div>
+      </div>
+      
+      <div class="pd-top"></div>
+      <div class="container">
+      <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="reach-out-box">
+      <a href="#" class="reach-out-btn transition"><span>Reach Out To Us</span></a>
+      <div class="detailed-analysis">for more detailed <span>ANALYSIS</span></div>
+      </div>
+      </div>
+      </div></div>
+      -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="reach-us">
+              <p><strong class="reach-us-margin">Reach Us On :</strong>
+                09971502294<br />
+                info.drowse@gmail.com<br />
+                tech.drowse@gmail.com
+              </p>
+              <ul class="s-icons">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        var limit = 10000;    //increase number of dataPoints by increasing the limit
+        var y = 0;
+        var data = [];
+        var dataSeries = { type: "line" };
+        var dataPoints = [];
+        for (var i = 0; i < limit; i += 1) {
+          y += (Math.random() * 10 - 5);
+          dataPoints.push({
+            x: i,
+            y: y
+          });
+        }
+        dataSeries.dataPoints = dataPoints;
+        data.push(dataSeries);
+      
+        //Better to construct options first and then pass it as a parameter
+        var options = {
+          zoomEnabled: true,
+                      animationEnabled: true,
+          title: {
+            text: ""
+          },
+          axisX: {
+            labelAngle: 30
+          },
+          axisY: {
+            includeZero: false
+          },
+          data: data  // random data
+        };
+      
+        $("#chartContainer").CanvasJSChart(options);
+      
+      });
+    </script>
+    <script>
+      // Select all links with hashes
+      $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+          // On-page links
+          if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+            && 
+            location.hostname == this.hostname
+          ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+              // Only prevent default if animation is actually gonna happen
+              event.preventDefault();
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000, function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(":focus")) { // Checking if the target was focused
+                  return false;
+                } else {
+                  $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                  $target.focus(); // Set focus again
+                };
+              });
+            }
+          }
+        });
+        
+    </script>
+    <link href="css/datepicker.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script>
+      if (top.location != location) {
+         top.location.href = document.location.href ;
+       }
+        $(function(){
+          window.prettyPrint && prettyPrint();
+          $('#dp1').datepicker({
+            format: 'mm-dd-yyyy'
+          });
+          $('#dp2').datepicker();
+          $('#dp3').datepicker();
+          $('#dp3').datepicker();
+          $('#dpYears').datepicker();
+          $('#dpMonths').datepicker();
+          
+          
+          var startDate = new Date(2012,1,20);
+          var endDate = new Date(2012,1,25);
+          $('#dp4').datepicker()
+            .on('changeDate', function(ev){
+              if (ev.date.valueOf() > endDate.valueOf()){
+                $('#alert').show().find('strong').text('The start date can not be greater then the end date');
+              } else {
+                $('#alert').hide();
+                startDate = new Date(ev.date);
+                $('#startDate').text($('#dp4').data('date'));
+              }
+              $('#dp4').datepicker('hide');
+            });
+          $('#dp5').datepicker()
+            .on('changeDate', function(ev){
+              if (ev.date.valueOf() < startDate.valueOf()){
+                $('#alert').show().find('strong').text('The end date can not be less then the start date');
+              } else {
+                $('#alert').hide();
+                endDate = new Date(ev.date);
+                $('#endDate').text($('#dp5').data('date'));
+              }
+              $('#dp5').datepicker('hide');
+            });
+      
+             // disabling dates
+             var nowTemp = new Date();
+             var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+      
+             var checkin = $('#dpd1').datepicker({
+               onRender: function(date) {
+                 return date.valueOf() < now.valueOf() ? 'disabled' : '';
+               }
+             }).on('changeDate', function(ev) {
+               if (ev.date.valueOf() > checkout.date.valueOf()) {
+                 var newDate = new Date(ev.date)
+                 newDate.setDate(newDate.getDate() + 1);
+                 checkout.setValue(newDate);
+               }
+               checkin.hide();
+               $('#dpd2')[0].focus();
+             }).data('datepicker');
+             var checkout = $('#dpd2').datepicker({
+               onRender: function(date) {
+                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+               }
+             }).on('changeDate', function(ev) {
+               checkout.hide();
+             }).data('datepicker');
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1029 @@
+">">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Go Drowse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="js/jquery-3.1.1.slim.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body class="dashboard-body">
+    <header>
+      <nav class="navbar navbar-inverse gd-main-bg-color">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="images/logo.png" alt="Go Drowse"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse text-right">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="posts.html">Drowse Posts</a></li>
+              <li><a href="#footer">Contact Us</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-success" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+                  <div class="col-lg-12">
+                    <div class="text-center">
+                      <h3><b>Vendor Login</b></h3>
+                    </div>
+                    <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post" role="form" autocomplete="off">
+                      <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-xs-7">
+                            <input type="checkbox" tabindex="3" name="remember" id="remember">
+                            <label for="remember"> Remember Me</label>
+                          </div>
+                          <div class="col-xs-5 pull-right">
+                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="text-right">
+                              <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                              <p>Not a Drowse Partner?</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="text-center">
+                              <a href="#" tabindex="5" class="gd-custom-button" data-toggle="modal" data-target="#goModal2">Be a Drowse Partner</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                    </form>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--/.navbar-collapse -->
+        </div>
+      </nav>
+    </header>
+    <div class="pd-top"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+          <div class="barcelos_hdng">Barcelos</div>
+          <div class="barcelos-text">
+            <div class="location-title">sector 29, gurgaon 
+              <span>“This place is meant for large parties and fresh draught beer!! ”</span>
+            </div>
+            <p class="text2">We would love to introduce us as the biggest partying chain of the city, with more than 7 pubs right here in Delhi NCR. We are widely known for the fresh beer we brew and serve...</p>
+            <!--
+              <p class="text2">We would love to introduce us as the biggest partying chain of the city, with more than 7 pubs right here in Delhi NCR. We are widely known for the fresh beer we brew and serve, the immense range of cocktails and the awesome little dance floor we have for the party animals !!</p>-->
+            <button type="button" class="btn edit-info btn-sm">edit info</button>
+            <div class="clearfix"></div>
+            <p class="text3">Ratings &amp; Reviews</p>
+            <div class="rating-box-outer">
+              <div class="rating-box">
+                <div class="rating-number">3.9</div>
+                <div class="rating-text">user <strong>ratings</strong></div>
+              </div>
+              <div class="rating-box">
+                <div class="rating-number">228</div>
+                <div class="rating-text">user <strong>reviews</strong></div>
+              </div>
+              <div class="rating-box">
+                <div class="rating-number">546</div>
+                <div class="rating-text">user <strong>cravings</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
+          <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+              <div class="dashboard_bnr"><img src="images/dashboard_bnr1.jpg" alt="" /></div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="search-box">
+                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
+              </div>
+              <div class="search-box">
+                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
+              </div>
+              <div class="search-box">
+                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
+              </div>
+              <div class="search-box">
+                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pd-top"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+          <div class="vendor-dashboard">
+            <p class="vendor-hdng">Vendor <span>Dashboard</span></p>
+            <ul class="vendor-dashboard-list">
+              <li>
+                <a class="active-vendor-list">Vendor Profile</a>
+                <ul>
+                  <li><a href="profile-edit.html">Show my Profile</a></li>
+                  <li><a href="profile-edit.html">Edit Profile</a></li>
+                </ul>
+              </li>
+              <li>
+                <a>Flexible Happy Hours</a>    
+                <ul>
+                  <li><a href="index.html#happy-hour-deal">Upload a happy hour deal</a></li>
+                  <li><a href="index.html#happy-hour-notifications">happy hour notifications</a></li>
+                 <!--  <li><a href="index.html#happy-hour-performance">happy hour performance</a></li> -->
+                </ul>
+              </li>
+              <li>
+                <a>Plan your Coupons</a>
+                <ul>
+                  <li><a href="plan-your-coupons.html#promote-coupons">Promote coupons</a></li>
+                  <li><a href="plan-your-coupons.html#active-coupons-for-sale">Active coupons for sale</a></li>
+                  <li><a href="plan-your-coupons.html#coupons-notifications">Coupons notifications</a></li>
+                 <!--  <li><a href="plan-your-coupons.html#coupons-performance">Coupons performance</a></li> -->
+                </ul>
+              </li>
+              <!--
+                <li><a href="performance-analysis.html">Performance Analysis</a>
+                <ul>
+                 <li><a href="performance-analysis.html#drowse-business-leads">Drowse business leads</a></li>
+                 <li><a href="performance-analysis.html#user-impressions">User impressions</a></li>
+                 <li><a href="performance-analysis.html#respond-to-user-reviews">Respond to user reviews</a></li>
+                 </ul>
+                </li>
+                
+                
+                <li><a href="#">Pricing, Payments and Invoice</a>
+                <ul>
+                 <li><a href="#">Activate features</a></li>
+                 <li><a href="#">Payment &amp; pricing terms</a></li>
+                 <li><a href="#">All invoices</a></li>
+                 </ul>
+                </li>
+                -->
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
+          <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+              <div class="hdng1">Vendor <span>Profile</span></div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="row">
+                <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7">
+                  <button type="button" class="btn btn-success">Drowse News</button>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                  <button type="button" class="btn btn-success">F.A.Q.s</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="content-box vendor-profile-container">
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">basic <span>vendor profile</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper input-p">
+                          <div class="form-group">
+                            <label for="outletname" class="col-sm-3 control-label">Outlet Name</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p>Barcelos</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="location" class="col-sm-3 control-label">Latitude</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p>28.543534543 North</p>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="location" class="col-sm-3 control-label">Longitude</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p>77.45234534543 East</p>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <label class="col-sm-3 control-label">Contact Details</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <div class="row gd-innerrow">
+                                <label for="address" class="col-sm-2 text-center">Address</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text">Shop no.-37, S.C.O. market, sector - 29, Gurgaon</p>
+                                </div>
+                                <label for="email" class="col-sm-2 text-center">E-mail</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text">info.barcelos@gmail.com</p>
+                                </div>
+                                <label for="phone" class="col-sm-2 text-center">Phone</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text">0124 2434 567, 2434 589</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-sm-3 control-label">Outlet Timings</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <div class="row">
+                                <label for="monday" class="col-sm-2 text-center">Monday</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text2">12:00pm to 11:00pm</p>
+                                </div>
+                                <label for="tuesday" class="col-sm-2 text-center">Tuesday</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text2">12:00pm to 11:00pm</p>
+                                </div>
+                                <label for="wednesday" class="col-sm-2 text-center">Wednesday</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text2">12:00pm to 11:00pm</p>
+                                </div>
+                                <label for="thrusday" class="col-sm-2 text-center">Thursday</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text2">12:00pm to 11:00pm</p>
+                                </div>
+                                <label for="friday" class="col-sm-2 text-center">Friday</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text2">11:00pm to 12:00pm</p>
+                                </div>
+                                <label for="saturday" class="col-sm-2 text-center">Saturday</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text2">11:00pm to 12:00pm</p>
+                                </div>
+                                <label for="sunday" class="col-sm-2 text-center">Sunday</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-text2">11:00pm to 12:00pm</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">menu <span>lists</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                          <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="restrobars">
+                                      <div>
+                                        <img src="images/menu.jpg" class="img-responsive">
+                                      </div>
+                                      <span>food menu</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="images/menu.jpg" class="img-responsive">
+                                      </div>
+                                      <span>drinks menu</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="images/menu.jpg" class="img-responsive">
+                                      </div>
+                                      <span>dessert menu</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="images/menu.jpg" class="img-responsive">
+                                      </div>
+                                      <span>cafe menu</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">descriptions <span>and photos</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                          <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="restrobars">
+                                      <div>
+                                        <img src="img/restro-bar.png" class="img-responsive">
+                                      </div>
+                                      <span>restro bars</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="img/pubs-n-bars.png" class="img-responsive">
+                                      </div>
+                                      <span>pubs n bars</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="img/lounge-bars.png" class="img-responsive">
+                                      </div>
+                                      <span>lounge bars</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="img/discotheques.png" class="img-responsive">
+                                      </div>
+                                      <span>discotheques</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="img/nightclubs.png" class="img-responsive">
+                                      </div>
+                                      <span>nightclubs</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">outlet <span>categories</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                          <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="restrobars">
+                                      <div>
+                                        <img src="img/restro-bar.png" class="img-responsive">
+                                      </div>
+                                      <span>restro bars</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="img/pubs-n-bars.png" class="img-responsive">
+                                      </div>
+                                      <span>pubs n bars</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="img/lounge-bars.png" class="img-responsive">
+                                      </div>
+                                      <span>lounge bars</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="img/discotheques.png" class="img-responsive">
+                                      </div>
+                                      <span>discotheques</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="">
+                                      <div>
+                                        <img src="img/nightclubs.png" class="img-responsive">
+                                      </div>
+                                      <span>nightclubs</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">cuisine <span>offered</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                          <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn " for="american">
+                                      <div>
+                                        <img src="img/american.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">american</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="italian">
+                                      <div>
+                                        <img src="img/italian.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">italian</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="french">
+                                      <div>
+                                        <img src="img/french.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">french</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="mexican">
+                                      <div>
+                                        <img src="img/mexican.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">mexican</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">special <span>categories</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                          <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn " for="sheeshabar">
+                                      <div>
+                                        <img src="img/sheesha-bar.png" class="img-responsive">
+                                      </div>
+                                      <span>sheesha bar</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="creativecocktails">
+                                      <div>
+                                        <img src="img/creative-cocktails.png" class="img-responsive">
+                                      </div>
+                                      <span>creative cocktails</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="microbreweries">
+                                      <div>
+                                        <img src="img/microbreweries.png" class="img-responsive">
+                                      </div>
+                                      <span>microbreweries</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="sundaybrunch">
+                                      <div>
+                                        <img src="img/sunday-brunch.png" class="img-responsive">
+                                      </div>
+                                      <span>sunday brunch</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="unlimitedbuffets">
+                                      <div>
+                                        <img src="img/unlimited-buffets.png" class="img-responsive">
+                                      </div>
+                                      <span>unlimited buffets</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">outlet <span>ambience</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                          <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn " for="casualdining">
+                                      <div>
+                                        <img src="img/casual-dining.png" class="img-responsive">
+                                      </div>
+                                      <span>casual dining</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="finedining">
+                                      <div>
+                                        <img src="img/fine-dining.png" class="img-responsive">
+                                      </div>
+                                      <span>fine dining</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="rooftopdining">
+                                      <div>
+                                        <img src="img/rooftop-dining.png" class="img-responsive">
+                                      </div>
+                                      <span>rooftop dining</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="poolsidelounge">
+                                      <div>
+                                        <img src="img/poolside-lounge.png" class="img-responsive">
+                                      </div>
+                                      <span>poolside lounge</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="privatedining">
+                                      <div>
+                                        <img src="img/private-dining.png" class="img-responsive">
+                                      </div>
+                                      <span>private dining</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box pricing-payment-panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">pricing <span>and payments</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper">
+                          <div class="form-group">
+                            <label for="foodfortwo" class="col-sm-3 control-label">food for two</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p class="form-control-text"><strong>1500 INR</strong> approx</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="beerpitcher" class="col-sm-3 control-label">beer pitcher</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p class="form-control-text"><strong>700 INR</strong> approx</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="foradessert" class="col-sm-3 control-label">for a dessert</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p class="form-control-text"><strong>200 INR</strong> approx</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="foracoffee" class="col-sm-3 control-label">for a coffee</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p class="form-control-text"><strong>150 INR</strong> approx</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="location" class="col-sm-3 control-label">payment modes</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                                <div class="row">
+                                  <div class="col-md-3">
+                                    <div>
+                                      <label class="btn " for="cashpayment">
+                                        <div>
+                                          <img src="img/cash-payment.png" class="img-responsive">
+                                        </div>
+                                        <span class="text-center2">cash payment</span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <div>
+                                      <label class="btn" for="cardpayment">
+                                        <div>
+                                          <img src="img/card-payment.png" class="img-responsive">
+                                        </div>
+                                        <span class="text-center2">card payment</span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">facilities <span>offered</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper inner-wrapper-image-section">
+                          <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn " for="fullveggie">
+                                      <div>
+                                        <img src="img/full-veggie.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">full veggie</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="fishnmeat">
+                                      <div>
+                                        <img src="img/fish-n-meat.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">fish n meat</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="smokingzone">
+                                      <div>
+                                        <img src="img/smoking-zone.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">smoking zone</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn" for="wififacility">
+                                      <div>
+                                        <img src="img/wi-fi-facility.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">wi-fi facility</span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div>
+                                    <label class="btn " for="freeparking">
+                                      <div>
+                                        <img src="img/free-parking.png" class="img-responsive">
+                                      </div>
+                                      <span class="text-center2">free parking</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+                <div class="panel-box contact-person-panel-box">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <div class="hdng2" id="happy-hour-deal">contact <span>person</span></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                      <form class="form-horizontal">
+                        <div class="inner-wrapper">
+                          <div class="form-group">
+                            <label for="ownername" class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p class="form-control-text">Sourav Banerjea</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="ownerpnone" class="col-sm-3 control-label">Phone</label>
+                            <div class="col-sm-9 gd-input-control">
+                              <p class="form-control-text">+91 9971502294</p>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-10"></div>
+                    <div class="col-sm-12 col-md-2">
+                      <div class="btn-right">
+                        <a href="#" class="btn proceed-btn active" role="button" aria-pressed="true">Edit Profile</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--panel end-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      <div class="container">
+      <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 bottom-hr">
+      <hr />
+      </div>
+      </div>
+      </div>
+      
+      <div class="pd-top"></div>
+      <div class="container">
+      <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="reach-out-box">
+      <a href="#" class="reach-out-btn transition"><span>Reach Out To Us</span></a>
+      <div class="detailed-analysis">for more detailed <span>ANALYSIS</span></div>
+      </div>
+      </div>
+      </div></div>
+      -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="reach-us">
+              <p><strong class="reach-us-margin">Reach Us On :</strong>
+                09971502294<br />
+                info.drowse@gmail.com<br />
+                tech.drowse@gmail.com
+              </p>
+              <ul class="s-icons">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        var limit = 10000;    //increase number of dataPoints by increasing the limit
+        var y = 0;
+        var data = [];
+        var dataSeries = { type: "line" };
+        var dataPoints = [];
+        for (var i = 0; i < limit; i += 1) {
+          y += (Math.random() * 10 - 5);
+          dataPoints.push({
+            x: i,
+            y: y
+          });
+        }
+        dataSeries.dataPoints = dataPoints;
+        data.push(dataSeries);
+      
+        //Better to construct options first and then pass it as a parameter
+        var options = {
+          zoomEnabled: true,
+                      animationEnabled: true,
+          title: {
+            text: ""
+          },
+          axisX: {
+            labelAngle: 30
+          },
+          axisY: {
+            includeZero: false
+          },
+          data: data  // random data
+        };
+      
+        $("#chartContainer").CanvasJSChart(options);
+      
+      });
+    </script>
+    <script>
+      // Select all links with hashes
+      $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+          // On-page links
+          if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+            && 
+            location.hostname == this.hostname
+          ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+              // Only prevent default if animation is actually gonna happen
+              event.preventDefault();
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000, function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(":focus")) { // Checking if the target was focused
+                  return false;
+                } else {
+                  $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                  $target.focus(); // Set focus again
+                };
+              });
+            }
+          }
+        });
+        
+    </script>
+  </body>
+</html>
