@@ -1,0 +1,581 @@
+{% extends "company/dashboard/main.html" %}
+
+{% block inner_content %}
+<div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+          <div class="hdng1">Flexible <span>Happy Hours</span></div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="row">
+            <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7">
+              <button type="button" class="btn btn-success">Drowse News</button>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+              <button type="button" class="btn btn-success">F.A.Q.s</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="content-box">
+            <div class="panel-box">
+              <div class="hdng2" id="happy-hour-deal">upload <span>happy hour</span> deal</div>
+              <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                      <div class="form-group">
+                        <select class="form-control" id="exampleSelect1">
+                          <option>Choose an earlier happy hour deal</option>
+                          <option>Choose an earlier happy hour deal</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12">
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer name">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <div class="form-group">
+                    <label for="exampleSelect1"><strong>Discount</strong></label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>10%</option>
+                      <option>20%</option>
+                      <option>30%</option>
+                      <option>40%</option>
+                      <option>50%</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                  <div class="form-group">
+                    <label for="exampleSelect1"><strong>Applicable on</strong></label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>All Alcohols</option>
+                      <option>All Non Alcohols</option>
+                      <option>Only Beers</option>
+                      <option>Only IMFL</option>
+                      <option>Only Cocktails</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                  <div class="form-group">
+                    <label for="exampleSelect1"><strong>Valid for</strong></label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>1 person / coupon </option>
+                      <option>2 person / coupon </option>
+                      <option>3 person / coupon</option>
+                      <option>4 person / coupon</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row valid-checkbox">
+                <div class="col-sm-12 col-md-12">
+                  <div class="form-group days-checkbox">
+                    <label for="exampleSelect1"><strong>Valid on which days</strong></label>
+                    <br />
+                    <ul class="days-list">
+                      <li>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Monday
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Tuesday
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Wednesday
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Thursday
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Friday
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Saturday
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Sunday
+                          </label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                  <label for="exampleInputEmail1"><strong>Happy hour deal running time</strong></label>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                      <div class="form-group">
+                        <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
+                      <div class="start-to2 text-center">to</div>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
+                      <div class="form-group">
+                        <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                      <!-- <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          <i class="more-less glyphicon glyphicon-plus"></i>
+                          <strong>Repeat on which Days</strong>
+                          </a>
+                        </h4>
+                        </div> -->
+                      <!-- <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                          <div class="valid-checkbox">
+                            <div class="form-group days-checkbox">
+                              <ul class="days-list">
+                                <li>
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Monday
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Tuesday
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Wednesday
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Thursday
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Friday
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Saturday
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Sunday
+                                    </label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        </div> -->
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <i class="more-less glyphicon glyphicon-plus"></i>
+                          <strong>Repeat on which Days</strong>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                          <div class="valid-checkbox">
+                            <div class="form-group days-checkbox different-timing-hr">
+                              <div class="row">
+                                <div class="col-sm-12 col-md-2">
+                                  <div class="form-check form-check-inline start-to2">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Monday
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-1">
+                                  <div class="start-to2 text-center">to</div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="row">
+                                <div class="col-sm-12 col-md-2">
+                                  <div class="form-check form-check-inline start-to2">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Tuesday
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-1">
+                                  <div class="start-to2 text-center">to</div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="row">
+                                <div class="col-sm-12 col-md-2">
+                                  <div class="form-check form-check-inline start-to2">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Wednesday
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-1">
+                                  <div class="start-to2 text-center">to</div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="row">
+                                <div class="col-sm-12 col-md-2">
+                                  <div class="form-check form-check-inline start-to2">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Thursday
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-1">
+                                  <div class="start-to2 text-center">to</div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="row">
+                                <div class="col-sm-12 col-md-2">
+                                  <div class="form-check form-check-inline start-to2">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Friday
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-1">
+                                  <div class="start-to2 text-center">to</div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="row">
+                                <div class="col-sm-12 col-md-2">
+                                  <div class="form-check form-check-inline start-to2">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Saturday
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-1">
+                                  <div class="start-to2 text-center">to</div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="row">
+                                <div class="col-sm-12 col-md-2">
+                                  <div class="form-check form-check-inline start-to2">
+                                    <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Sunday
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 col-md-1">
+                                  <div class="start-to2 text-center">to</div>
+                                </div>
+                                <div class="col-sm-12 col-md-3">
+                                  <div class="form-group">
+                                    <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="same-timing">
+                      <div class="form-check days-checkbox">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Same timing
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- panel-group -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <p></p>
+                  <div class="hdng3">select <span>terms and conditions</span></div>
+                  <div class="tmc">
+                    <div class="inner-wrapper inner-wrapper-image-section">
+                      <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                        <div class="col-md-12">
+                          <ul class="tmc-list2">
+                            <li>
+                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <span class="tmc-span">The outlet is strict about timings and validity of offers. Please check your availability at the pub within the timings announced in the happy hour section, else the ticket would stand invalid, unless considered otherwise by the outlet.</span>
+                            </li>
+                            <li>
+                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <span class="tmc-span">Prior reservation recommended. This offer is only applicable through drowse tickets.</span>
+                            </li>
+                            <li>
+                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <span class="tmc-span">Once ticket is booked for a particular happy hour offer, it cannot be clubbed or exchanged with any other active / inactive offer.</span>
+                            </li>
+                            <li>
+                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <span class="tmc-span">The choice of hookah / drinks / food is based on availability and sole discretion of the pub management.</span>
+                            </li>
+                            <li>
+                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <span class="tmc-span">Sharing and packing of food not allowed. Not applicable only on platters and pitchers.</span>
+                            </li>
+                            <li>
+                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <span class="tmc-span">Offer not valid on all special days such as festivals, social events and public occasions, unless specified.</span>
+                            </li>
+                            <li>
+                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <span class="tmc-span">All local / national laws regarding legal drinking age stands valid for all drowse customers.</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--        <div class="row">
+                <div class="multiple-browse">
+                  <div class="col-sm-12 col-md-6">
+                    <form action="/action_page.php">
+                      <div class="submit-browse"><input type="file" name="img" class="form-control" multiple></div>
+                      <div class="submit-browse2"> <input type="submit" class="btn btn-success"></div>
+                    </form>
+                  </div>
+                </div>
+                </div> -->
+              <br />
+              <div class="row">
+                <div class="col-sm-12 col-md-3">
+                  <div class="form-check days-checkbox">
+                    <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                    Remember this offer code 
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <div class="capcha"><img src="static/images/captcha.gif" alt=""/></div>
+                    <label for="exampleInputPassword1">Enter the code above here</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-7"></div>
+                <div class="col-sm-12 col-md-2 proceed-btn-mrgn">
+                  <div class="btn-right">
+                    <a href="#" class="btn proceed-btn active" role="button" aria-pressed="true">Proceed</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-box">
+              <div class="hdng2" id="happy-hour-notifications"><span>happy hour</span> notifications</div>
+              <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <div class="active-ticket-box">
+                    <div class="hdng4"><span>active</span> ticket</div>
+                    <div class="active-ticket-text">
+                      <p><strong>Mr. Prakhar Trivedi </strong>has booked a ticket for 2 persons on<br />
+                        <strong>offer code BAR 30</strong><br />
+                        <strong>30% OFF on Beer Pitchers.</strong>
+                      </p>
+                      <hr />
+                      <p class="customer-code">Fill Unique Customer Code</p>
+                      <div class="pt">PT 0657 B</div>
+                    </div>
+                    <a href="#" class="close-ticket-btn">Close Ticket</a>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <div class="active-ticket-box">
+                    <div class="hdng4"><span>active</span> ticket</div>
+                    <div class="active-ticket-text">
+                      <p><strong>Mr. Prakhar Trivedi </strong>has booked a ticket for 2 persons on<br />
+                        <strong>offer code BAR 30</strong><br />
+                        <strong>30% OFF on Beer Pitchers.</strong>
+                      </p>
+                      <hr />
+                      <p class="customer-code">Fill Unique Customer Code</p>
+                      <div class="pt">PT 0657 B</div>
+                    </div>
+                    <a href="#" class="close-ticket-btn">Close Ticket</a>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <div class="active-ticket-box">
+                    <div class="hdng4"><span>active</span> ticket</div>
+                    <div class="active-ticket-text">
+                      <p><strong>Mr. Prakhar Trivedi </strong>has booked a ticket for 2 persons on<br />
+                        <strong>offer code BAR 30</strong><br />
+                        <strong>30% OFF on Beer Pitchers.</strong>
+                      </p>
+                      <hr />
+                      <p class="customer-code">Fill Unique Customer Code</p>
+                      <div class="pt">PT 0657 B</div>
+                    </div>
+                    <a href="#" class="close-ticket-btn">Close Ticket</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-box">
+              <div class="hdng2" id="happy-hour-performance"><span>happy hour</span> performance</div>
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                  <div class="ticket-book-number">164</div>
+                  <div class="ticket-book-text">Total Tickets Booked in September</div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                  <div class="ticket-book-number">152</div>
+                  <div class="ticket-book-text">Total Tickets Redeemed in September</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="hdng-inr">6,000 <span>INR</span></div>
+                  <div class="total-money"><strong>Total Money Spent</strong> (Through Happy Hours) <strong>in September</strong></div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div class="hdng-inr">76,000 <span>INR</span></div>
+                  <div class="total-money"><strong>Total Minimum Sales</strong> (Through Happy Hours) <strong>in September</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

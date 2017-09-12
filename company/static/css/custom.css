@@ -5,12 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 
 .dashboard-body{ background-color:#f1f1f1;}
-header{
-    background-color: #47151E;
-    border-color: #47151E;
-    margin-bottom: 0px;
-	padding:20px 0
-}
+
 
 .dashboard_bnr img{ width:100%;}
 
@@ -837,35 +832,8 @@ ul.days-list li{ float:left; margin-right:20px; display:inline-block;}
 }
 
 
-.navbar-brand {
-    float: left;
-    height: 40px;
-    padding: 0px 15px;
-    font-size: 18px;
-    line-height: 20px;
-}
-.navbar-inverse {
-    background-color: transparent;
-    border-color: #47151e;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-    color: #f1f1f1;
-    padding: 10px 20px;
-	  font-size: 16px;
-}
-.navbar-inverse .navbar-nav>li>a:hover {
-    color: #86A03D;
-
-}
 
 
-
-
-.navbar-inverse .navbar-collapse{
-    border-color: #101010;
-    margin: 22px 0 0 0;
-}
 
 
 .label-selected-box{

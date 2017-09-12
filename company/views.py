@@ -38,14 +38,28 @@ def index(request):
 	return render(request,'index.html',{"foo":"bar"})
 
 
+def mains(request):
+    return render(request,'company/dashboard/main.html',{"foo":"bar"})
+
+
+def vendor_dashboard(request):
+    return render(request,'company/dashboard/vendor_dashboard.html',{"foo":"bar"})
 
 
 
 
+def add_happy_hours(request):
+    return render(request,'company/dashboard/add_happy_hours.html',{"foo":"bar"})
 
 
-def dashboard(request):
-    return render(request,'company/dashboard.html',{"foo":"bar"})
+
+
+def plan_coupons(request):
+    return render(request,'company/dashboard/plan_coupons.html',{"foo":"bar"})
+
+
+def edit_profile(request):
+    return render(request,'company/dashboard/edit_profile.html',{"foo":"bar"})
     
 def VendorListView(request):
 

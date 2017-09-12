@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+{% load staticfiles %}
+<link rel="stylesheet" href="/static/css/custom.css">
+<div class="pd-top"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+      <div class="barcelos_hdng">Barcelos</div>
+      <div class="barcelos-text">
+        <div class="location-title">sector 29, gurgaon 
+          <span>“This place is meant for large parties and fresh draught beer!! ”</span>
+        </div>
+        <p class="text2">We would love to introduce us as the biggest partying chain of the city, with more than 7 pubs right here in Delhi NCR. We are widely known for the fresh beer we brew and serve...</p>
+        <!--
+          <p class="text2">We would love to introduce us as the biggest partying chain of the city, with more than 7 pubs right here in Delhi NCR. We are widely known for the fresh beer we brew and serve, the immense range of cocktails and the awesome little dance floor we have for the party animals !!</p>-->
+        <button type="button" class="btn edit-info btn-sm">edit info</button>
+        <div class="clearfix"></div>
+        <p class="text3">Ratings &amp; Reviews</p>
+        <div class="rating-box-outer">
+          <div class="rating-box">
+            <div class="rating-number">3.9</div>
+            <div class="rating-text">user <strong>ratings</strong></div>
+          </div>
+          <div class="rating-box">
+            <div class="rating-number">228</div>
+            <div class="rating-text">user <strong>reviews</strong></div>
+          </div>
+          <div class="rating-box">
+            <div class="rating-number">546</div>
+            <div class="rating-text">user <strong>cravings</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+          <div class="dashboard_bnr"><img src="static/images/dashboard_bnr1.jpg" alt="" /></div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="search-box">
+            <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+            <div class="search-bg-black"><img src="static/images/search-bg-black.png" alt="" /></div>
+          </div>
+          <div class="search-box">
+            <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+            <div class="search-bg-black"><img src="static/images/search-bg-black.png" alt="" /></div>
+          </div>
+          <div class="search-box">
+            <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+            <div class="search-bg-black"><img src="static/images/search-bg-black.png" alt="" /></div>
+          </div>
+          <div class="search-box">
+            <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+            <div class="search-bg-black"><img src="static/images/search-bg-black.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pd-top"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+      <div class="vendor-dashboard">
+        <p class="vendor-hdng">Vendor <span>Dashboard</span></p>
+        <ul class="vendor-dashboard-list">
+          <li>
+            <a href="/dashboard">Vendor Profile</a>
+            <ul>
+              <li><a href="/edit_profile">Edit Profile</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/add_happy_hours" class="active-vendor-list">Flexible Happy Hours</a>    
+            <ul>
+              <li><a href="/add_happy_hours#happy-hour-deal">Upload a happy hour deal</a></li>
+              <li><a href="/add_happy_hours#happy-hour-notifications">happy hour notifications</a></li>
+              <li><a href="/add_happy_hours#happy-hour-performance">happy hour performance</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/plan_coupons">Plan your Coupons</a>
+            <ul>
+              <li><a href="/plan_coupons#promote-coupons">Promote coupons</a></li>
+              <li><a href="/plan_coupons#active-coupons-for-sale">Active coupons for sale</a></li>
+              <li><a href="/plan_coupons#coupons-notifications">Coupons notifications</a></li>
+              <li><a href="/plan_coupons#coupons-performance">Coupons performance</a></li>
+            </ul>
+          </li>
+          <!--
+            <li><a href="performance-analysis.html">Performance Analysis</a>
+            <ul>
+             <li><a href="performance-analysis.html#drowse-business-leads">Drowse business leads</a></li>
+             <li><a href="performance-analysis.html#user-impressions">User impressions</a></li>
+             <li><a href="performance-analysis.html#respond-to-user-reviews">Respond to user reviews</a></li>
+             </ul>
+            </li>
+            
+            
+            <li><a href="#">Pricing, Payments and Invoice</a>
+            <ul>
+             <li><a href="#">Activate features</a></li>
+             <li><a href="#">Payment &amp; pricing terms</a></li>
+             <li><a href="#">All invoices</a></li>
+             </ul>
+            </li>
+            -->
+        </ul>
+      </div>
+    </div>
+    
+
+
+
+    {% block inner_content %}
+    {% endblock %}
+
+
+
+
+
+
+  </div>
+</div>
+<!--
+  <div class="container">
+  <div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 bottom-hr">
+  <hr />
+  </div>
+  </div>
+  </div>
+  
+  <div class="pd-top"></div>
+  <div class="container">
+  <div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <div class="reach-out-box">
+  <a href="#" class="reach-out-btn transition"><span>Reach Out To Us</span></a>
+  <div class="detailed-analysis">for more detailed <span>ANALYSIS</span></div>
+  </div>
+  </div>
+  </div></div>-->
+
+
+<script type="text/javascript">
+  
+      $(function () {
+        var limit = 10000;    //increase number of dataPoints by increasing the limit
+        var y = 0;
+        var data = [];
+        var dataSeries = { type: "line" };
+        var dataPoints = [];
+        for (var i = 0; i < limit; i += 1) {
+          y += (Math.random() * 10 - 5);
+          dataPoints.push({
+            x: i,
+            y: y
+          });
+        }
+        dataSeries.dataPoints = dataPoints;
+        data.push(dataSeries);
+      
+        //Better to construct options first and then pass it as a parameter
+        var options = {
+          zoomEnabled: true,
+                      animationEnabled: true,
+          title: {
+            text: ""
+          },
+          axisX: {
+            labelAngle: 30
+          },
+          axisY: {
+            includeZero: false
+          },
+          data: data  // random data
+        };
+      
+        $("#chartContainer").CanvasJSChart(options);
+      
+      });
+    </script>
+    <script>
+      // Select all links with hashes
+      $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+          // On-page links
+          if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+            && 
+            location.hostname == this.hostname
+          ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+              // Only prevent default if animation is actually gonna happen
+              event.preventDefault();
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000, function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(":focus")) { // Checking if the target was focused
+                  return false;
+                } else {
+                  $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                  $target.focus(); // Set focus again
+                };
+              });
+            }
+          }
+        });
+        
+    </script>
+    <script>
+      if (top.location != location) {
+         top.location.href = document.location.href ;
+       }
+        $(function(){
+          window.prettyPrint && prettyPrint();
+          $('#dp1').datepicker({
+            format: 'mm-dd-yyyy'
+          });
+          $('#dp2').datepicker();
+          $('#dp3').datepicker();
+          $('#dp3').datepicker();
+          $('#dpYears').datepicker();
+          $('#dpMonths').datepicker();
+          
+          
+          var startDate = new Date(2012,1,20);
+          var endDate = new Date(2012,1,25);
+          $('#dp4').datepicker()
+            .on('changeDate', function(ev){
+              if (ev.date.valueOf() > endDate.valueOf()){
+                $('#alert').show().find('strong').text('The start date can not be greater then the end date');
+              } else {
+                $('#alert').hide();
+                startDate = new Date(ev.date);
+                $('#startDate').text($('#dp4').data('date'));
+              }
+              $('#dp4').datepicker('hide');
+            });
+          $('#dp5').datepicker()
+            .on('changeDate', function(ev){
+              if (ev.date.valueOf() < startDate.valueOf()){
+                $('#alert').show().find('strong').text('The end date can not be less then the start date');
+              } else {
+                $('#alert').hide();
+                endDate = new Date(ev.date);
+                $('#endDate').text($('#dp5').data('date'));
+              }
+              $('#dp5').datepicker('hide');
+            });
+      
+             // disabling dates
+             var nowTemp = new Date();
+             var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+      
+             var checkin = $('#dpd1').datepicker({
+               onRender: function(date) {
+                 return date.valueOf() < now.valueOf() ? 'disabled' : '';
+               }
+             }).on('changeDate', function(ev) {
+               if (ev.date.valueOf() > checkout.date.valueOf()) {
+                 var newDate = new Date(ev.date)
+                 newDate.setDate(newDate.getDate() + 1);
+                 checkout.setValue(newDate);
+               }
+               checkin.hide();
+               $('#dpd2')[0].focus();
+             }).data('datepicker');
+             var checkout = $('#dpd2').datepicker({
+               onRender: function(date) {
+                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+               }
+             }).on('changeDate', function(ev) {
+               checkout.hide();
+             }).data('datepicker');
+        });
+    </script>
+
+{% include "footer2.html" %}
+{% endblock %}

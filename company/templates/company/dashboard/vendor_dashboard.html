@@ -1,205 +1,7 @@
-">">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Go Drowse</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/custom.css">
-    <script src="js/jquery-3.1.1.slim.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </head>
-  <body class="dashboard-body">
-    <header>
-      <nav class="navbar navbar-inverse gd-main-bg-color">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><img src="images/logo.png" alt="Go Drowse"></a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse text-right">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="posts.html">Drowse Posts</a></li>
-              <li><a href="#footer">Contact Us</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle btn btn-success" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
-                <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
-                  <div class="col-lg-12">
-                    <div class="text-center">
-                      <h3><b>Vendor Login</b></h3>
-                    </div>
-                    <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post" role="form" autocomplete="off">
-                      <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off">
-                      </div>
-                      <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
-                      </div>
-                      <div class="form-group">
-                        <div class="row">
-                          <div class="col-xs-7">
-                            <input type="checkbox" tabindex="3" name="remember" id="remember">
-                            <label for="remember"> Remember Me</label>
-                          </div>
-                          <div class="col-xs-5 pull-right">
-                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="row">
-                          <div class="col-lg-12">
-                            <div class="text-right">
-                              <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
-                            </div>
-                            <hr>
-                            <div class="text-center">
-                              <p>Not a Drowse Partner?</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="row">
-                          <div class="col-lg-12">
-                            <div class="text-center">
-                              <a href="#" tabindex="5" class="gd-custom-button" data-toggle="modal" data-target="#goModal2">Be a Drowse Partner</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
-                    </form>
-                  </div>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <!--/.navbar-collapse -->
-        </div>
-      </nav>
-    </header>
-    <div class="pd-top"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
-          <div class="barcelos_hdng">Barcelos</div>
-          <div class="barcelos-text">
-            <div class="location-title">sector 29, gurgaon 
-              <span>“This place is meant for large parties and fresh draught beer!! ”</span>
-            </div>
-            <p class="text2">We would love to introduce us as the biggest partying chain of the city, with more than 7 pubs right here in Delhi NCR. We are widely known for the fresh beer we brew and serve...</p>
-            <!--
-              <p class="text2">We would love to introduce us as the biggest partying chain of the city, with more than 7 pubs right here in Delhi NCR. We are widely known for the fresh beer we brew and serve, the immense range of cocktails and the awesome little dance floor we have for the party animals !!</p>-->
-            <button type="button" class="btn edit-info btn-sm">edit info</button>
-            <div class="clearfix"></div>
-            <p class="text3">Ratings &amp; Reviews</p>
-            <div class="rating-box-outer">
-              <div class="rating-box">
-                <div class="rating-number">3.9</div>
-                <div class="rating-text">user <strong>ratings</strong></div>
-              </div>
-              <div class="rating-box">
-                <div class="rating-number">228</div>
-                <div class="rating-text">user <strong>reviews</strong></div>
-              </div>
-              <div class="rating-box">
-                <div class="rating-number">546</div>
-                <div class="rating-text">user <strong>cravings</strong></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
-          <div class="row">
-            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
-              <div class="dashboard_bnr"><img src="images/dashboard_bnr1.jpg" alt="" /></div>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <div class="search-box">
-                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
-              </div>
-              <div class="search-box">
-                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
-              </div>
-              <div class="search-box">
-                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
-              </div>
-              <div class="search-box">
-                <div class="search-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-                <div class="search-bg-black"><img src="images/search-bg-black.png" alt="" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pd-top"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
-          <div class="vendor-dashboard">
-            <p class="vendor-hdng">Vendor <span>Dashboard</span></p>
-            <ul class="vendor-dashboard-list">
-              <li>
-                <a class="active-vendor-list">Vendor Profile</a>
-                <ul>
-                  <li><a href="profile-edit.html">Show my Profile</a></li>
-                  <li><a href="profile-edit.html">Edit Profile</a></li>
-                </ul>
-              </li>
-              <li>
-                <a>Flexible Happy Hours</a>    
-                <ul>
-                  <li><a href="index.html#happy-hour-deal">Upload a happy hour deal</a></li>
-                  <li><a href="index.html#happy-hour-notifications">happy hour notifications</a></li>
-                 <!--  <li><a href="index.html#happy-hour-performance">happy hour performance</a></li> -->
-                </ul>
-              </li>
-              <li>
-                <a>Plan your Coupons</a>
-                <ul>
-                  <li><a href="plan-your-coupons.html#promote-coupons">Promote coupons</a></li>
-                  <li><a href="plan-your-coupons.html#active-coupons-for-sale">Active coupons for sale</a></li>
-                  <li><a href="plan-your-coupons.html#coupons-notifications">Coupons notifications</a></li>
-                 <!--  <li><a href="plan-your-coupons.html#coupons-performance">Coupons performance</a></li> -->
-                </ul>
-              </li>
-              <!--
-                <li><a href="performance-analysis.html">Performance Analysis</a>
-                <ul>
-                 <li><a href="performance-analysis.html#drowse-business-leads">Drowse business leads</a></li>
-                 <li><a href="performance-analysis.html#user-impressions">User impressions</a></li>
-                 <li><a href="performance-analysis.html#respond-to-user-reviews">Respond to user reviews</a></li>
-                 </ul>
-                </li>
-                
-                
-                <li><a href="#">Pricing, Payments and Invoice</a>
-                <ul>
-                 <li><a href="#">Activate features</a></li>
-                 <li><a href="#">Payment &amp; pricing terms</a></li>
-                 <li><a href="#">All invoices</a></li>
-                 </ul>
-                </li>
-                -->
-            </ul>
-          </div>
-        </div>
+{% extends "company/dashboard/main.html" %}
+
+{% block inner_content %}
+
         <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
           <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -327,7 +129,7 @@
                                   <div>
                                     <label class="btn" for="restrobars">
                                       <div>
-                                        <img src="images/menu.jpg" class="img-responsive">
+                                        <img src="static/images/menu.jpg" class="img-responsive">
                                       </div>
                                       <span>food menu</span>
                                     </label>
@@ -337,7 +139,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="images/menu.jpg" class="img-responsive">
+                                        <img src="static/images/menu.jpg" class="img-responsive">
                                       </div>
                                       <span>drinks menu</span>
                                     </label>
@@ -347,7 +149,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="images/menu.jpg" class="img-responsive">
+                                        <img src="static/images/menu.jpg" class="img-responsive">
                                       </div>
                                       <span>dessert menu</span>
                                     </label>
@@ -357,7 +159,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="images/menu.jpg" class="img-responsive">
+                                        <img src="static/images/menu.jpg" class="img-responsive">
                                       </div>
                                       <span>cafe menu</span>
                                     </label>
@@ -389,7 +191,7 @@
                                   <div>
                                     <label class="btn" for="restrobars">
                                       <div>
-                                        <img src="img/restro-bar.png" class="img-responsive">
+                                        <img src="static/img/restro-bar.png" class="img-responsive">
                                       </div>
                                       <span>restro bars</span>
                                     </label>
@@ -399,7 +201,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="img/pubs-n-bars.png" class="img-responsive">
+                                        <img src="static/img/pubs-n-bars.png" class="img-responsive">
                                       </div>
                                       <span>pubs n bars</span>
                                     </label>
@@ -409,7 +211,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="img/lounge-bars.png" class="img-responsive">
+                                        <img src="static/img/lounge-bars.png" class="img-responsive">
                                       </div>
                                       <span>lounge bars</span>
                                     </label>
@@ -419,7 +221,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="img/discotheques.png" class="img-responsive">
+                                        <img src="static/img/discotheques.png" class="img-responsive">
                                       </div>
                                       <span>discotheques</span>
                                     </label>
@@ -429,7 +231,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="img/nightclubs.png" class="img-responsive">
+                                        <img src="static/img/nightclubs.png" class="img-responsive">
                                       </div>
                                       <span>nightclubs</span>
                                     </label>
@@ -461,7 +263,7 @@
                                   <div>
                                     <label class="btn" for="restrobars">
                                       <div>
-                                        <img src="img/restro-bar.png" class="img-responsive">
+                                        <img src="static/img/restro-bar.png" class="img-responsive">
                                       </div>
                                       <span>restro bars</span>
                                     </label>
@@ -471,7 +273,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="img/pubs-n-bars.png" class="img-responsive">
+                                        <img src="static/img/pubs-n-bars.png" class="img-responsive">
                                       </div>
                                       <span>pubs n bars</span>
                                     </label>
@@ -481,7 +283,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="img/lounge-bars.png" class="img-responsive">
+                                        <img src="static/img/lounge-bars.png" class="img-responsive">
                                       </div>
                                       <span>lounge bars</span>
                                     </label>
@@ -491,7 +293,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="img/discotheques.png" class="img-responsive">
+                                        <img src="static/img/discotheques.png" class="img-responsive">
                                       </div>
                                       <span>discotheques</span>
                                     </label>
@@ -501,7 +303,7 @@
                                   <div>
                                     <label class="btn" for="">
                                       <div>
-                                        <img src="img/nightclubs.png" class="img-responsive">
+                                        <img src="static/img/nightclubs.png" class="img-responsive">
                                       </div>
                                       <span>nightclubs</span>
                                     </label>
@@ -533,7 +335,7 @@
                                   <div>
                                     <label class="btn " for="american">
                                       <div>
-                                        <img src="img/american.png" class="img-responsive">
+                                        <img src="static/img/american.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">american</span>
                                     </label>
@@ -543,7 +345,7 @@
                                   <div>
                                     <label class="btn" for="italian">
                                       <div>
-                                        <img src="img/italian.png" class="img-responsive">
+                                        <img src="static/img/italian.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">italian</span>
                                     </label>
@@ -553,7 +355,7 @@
                                   <div>
                                     <label class="btn" for="french">
                                       <div>
-                                        <img src="img/french.png" class="img-responsive">
+                                        <img src="static/img/french.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">french</span>
                                     </label>
@@ -563,7 +365,7 @@
                                   <div>
                                     <label class="btn" for="mexican">
                                       <div>
-                                        <img src="img/mexican.png" class="img-responsive">
+                                        <img src="static/img/mexican.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">mexican</span>
                                     </label>
@@ -595,7 +397,7 @@
                                   <div>
                                     <label class="btn " for="sheeshabar">
                                       <div>
-                                        <img src="img/sheesha-bar.png" class="img-responsive">
+                                        <img src="static/img/sheesha-bar.png" class="img-responsive">
                                       </div>
                                       <span>sheesha bar</span>
                                     </label>
@@ -605,7 +407,7 @@
                                   <div>
                                     <label class="btn" for="creativecocktails">
                                       <div>
-                                        <img src="img/creative-cocktails.png" class="img-responsive">
+                                        <img src="static/img/creative-cocktails.png" class="img-responsive">
                                       </div>
                                       <span>creative cocktails</span>
                                     </label>
@@ -615,7 +417,7 @@
                                   <div>
                                     <label class="btn" for="microbreweries">
                                       <div>
-                                        <img src="img/microbreweries.png" class="img-responsive">
+                                        <img src="static/img/microbreweries.png" class="img-responsive">
                                       </div>
                                       <span>microbreweries</span>
                                     </label>
@@ -625,7 +427,7 @@
                                   <div>
                                     <label class="btn" for="sundaybrunch">
                                       <div>
-                                        <img src="img/sunday-brunch.png" class="img-responsive">
+                                        <img src="static/img/sunday-brunch.png" class="img-responsive">
                                       </div>
                                       <span>sunday brunch</span>
                                     </label>
@@ -635,7 +437,7 @@
                                   <div>
                                     <label class="btn" for="unlimitedbuffets">
                                       <div>
-                                        <img src="img/unlimited-buffets.png" class="img-responsive">
+                                        <img src="static/img/unlimited-buffets.png" class="img-responsive">
                                       </div>
                                       <span>unlimited buffets</span>
                                     </label>
@@ -667,7 +469,7 @@
                                   <div>
                                     <label class="btn " for="casualdining">
                                       <div>
-                                        <img src="img/casual-dining.png" class="img-responsive">
+                                        <img src="static/img/casual-dining.png" class="img-responsive">
                                       </div>
                                       <span>casual dining</span>
                                     </label>
@@ -677,7 +479,7 @@
                                   <div>
                                     <label class="btn" for="finedining">
                                       <div>
-                                        <img src="img/fine-dining.png" class="img-responsive">
+                                        <img src="static/img/fine-dining.png" class="img-responsive">
                                       </div>
                                       <span>fine dining</span>
                                     </label>
@@ -687,7 +489,7 @@
                                   <div>
                                     <label class="btn" for="rooftopdining">
                                       <div>
-                                        <img src="img/rooftop-dining.png" class="img-responsive">
+                                        <img src="static/img/rooftop-dining.png" class="img-responsive">
                                       </div>
                                       <span>rooftop dining</span>
                                     </label>
@@ -697,7 +499,7 @@
                                   <div>
                                     <label class="btn" for="poolsidelounge">
                                       <div>
-                                        <img src="img/poolside-lounge.png" class="img-responsive">
+                                        <img src="static/img/poolside-lounge.png" class="img-responsive">
                                       </div>
                                       <span>poolside lounge</span>
                                     </label>
@@ -707,7 +509,7 @@
                                   <div>
                                     <label class="btn" for="privatedining">
                                       <div>
-                                        <img src="img/private-dining.png" class="img-responsive">
+                                        <img src="static/img/private-dining.png" class="img-responsive">
                                       </div>
                                       <span>private dining</span>
                                     </label>
@@ -765,7 +567,7 @@
                                     <div>
                                       <label class="btn " for="cashpayment">
                                         <div>
-                                          <img src="img/cash-payment.png" class="img-responsive">
+                                          <img src="static/img/cash-payment.png" class="img-responsive">
                                         </div>
                                         <span class="text-center2">cash payment</span>
                                       </label>
@@ -775,7 +577,7 @@
                                     <div>
                                       <label class="btn" for="cardpayment">
                                         <div>
-                                          <img src="img/card-payment.png" class="img-responsive">
+                                          <img src="static/img/card-payment.png" class="img-responsive">
                                         </div>
                                         <span class="text-center2">card payment</span>
                                       </label>
@@ -808,7 +610,7 @@
                                   <div>
                                     <label class="btn " for="fullveggie">
                                       <div>
-                                        <img src="img/full-veggie.png" class="img-responsive">
+                                        <img src="static/img/full-veggie.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">full veggie</span>
                                     </label>
@@ -818,7 +620,7 @@
                                   <div>
                                     <label class="btn" for="fishnmeat">
                                       <div>
-                                        <img src="img/fish-n-meat.png" class="img-responsive">
+                                        <img src="static/img/fish-n-meat.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">fish n meat</span>
                                     </label>
@@ -828,7 +630,7 @@
                                   <div>
                                     <label class="btn" for="smokingzone">
                                       <div>
-                                        <img src="img/smoking-zone.png" class="img-responsive">
+                                        <img src="static/img/smoking-zone.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">smoking zone</span>
                                     </label>
@@ -838,7 +640,7 @@
                                   <div>
                                     <label class="btn" for="wififacility">
                                       <div>
-                                        <img src="img/wi-fi-facility.png" class="img-responsive">
+                                        <img src="static/img/wi-fi-facility.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">wi-fi facility</span>
                                     </label>
@@ -848,7 +650,7 @@
                                   <div>
                                     <label class="btn " for="freeparking">
                                       <div>
-                                        <img src="img/free-parking.png" class="img-responsive">
+                                        <img src="static/img/free-parking.png" class="img-responsive">
                                       </div>
                                       <span class="text-center2">free parking</span>
                                     </label>
@@ -903,127 +705,5 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!--
-      <div class="container">
-      <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 bottom-hr">
-      <hr />
-      </div>
-      </div>
-      </div>
-      
-      <div class="pd-top"></div>
-      <div class="container">
-      <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-      <div class="reach-out-box">
-      <a href="#" class="reach-out-btn transition"><span>Reach Out To Us</span></a>
-      <div class="detailed-analysis">for more detailed <span>ANALYSIS</span></div>
-      </div>
-      </div>
-      </div></div>
-      -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="reach-us">
-              <p><strong class="reach-us-margin">Reach Us On :</strong>
-                09971502294<br />
-                info.drowse@gmail.com<br />
-                tech.drowse@gmail.com
-              </p>
-              <ul class="s-icons">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
-    <script type="text/javascript">
-      $(function () {
-        var limit = 10000;    //increase number of dataPoints by increasing the limit
-        var y = 0;
-        var data = [];
-        var dataSeries = { type: "line" };
-        var dataPoints = [];
-        for (var i = 0; i < limit; i += 1) {
-          y += (Math.random() * 10 - 5);
-          dataPoints.push({
-            x: i,
-            y: y
-          });
-        }
-        dataSeries.dataPoints = dataPoints;
-        data.push(dataSeries);
-      
-        //Better to construct options first and then pass it as a parameter
-        var options = {
-          zoomEnabled: true,
-                      animationEnabled: true,
-          title: {
-            text: ""
-          },
-          axisX: {
-            labelAngle: 30
-          },
-          axisY: {
-            includeZero: false
-          },
-          data: data  // random data
-        };
-      
-        $("#chartContainer").CanvasJSChart(options);
-      
-      });
-    </script>
-    <script>
-      // Select all links with hashes
-      $('a[href*="#"]')
-        // Remove links that don't actually link to anything
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function(event) {
-          // On-page links
-          if (
-            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-            && 
-            location.hostname == this.hostname
-          ) {
-            // Figure out element to scroll to
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            // Does a scroll target exist?
-            if (target.length) {
-              // Only prevent default if animation is actually gonna happen
-              event.preventDefault();
-              $('html, body').animate({
-                scrollTop: target.offset().top
-              }, 1000, function() {
-                // Callback after animation
-                // Must change focus!
-                var $target = $(target);
-                $target.focus();
-                if ($target.is(":focus")) { // Checking if the target was focused
-                  return false;
-                } else {
-                  $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                  $target.focus(); // Set focus again
-                };
-              });
-            }
-          }
-        });
-        
-    </script>
-  </body>
-</html>
+
+{% endblock %}
