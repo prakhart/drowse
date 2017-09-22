@@ -152,3 +152,51 @@ class TblData(models.Model):
     cat_name = models.CharField(max_length=250,null = True,blank = True)
     display_name = models.CharField(max_length=250,null = True,blank = True)
     image = models.FileField(upload_to=get_catagory_path,null = True,blank = True)
+
+
+
+
+# class TblHappyHours(models.Model):
+#     name = models.CharField(max_length=250,null = True,blank = True)
+#     hour_id = models.CharField(max_length=250,null = True,blank = True)
+#     display_name = models.CharField(max_length=250,null = True,blank = True)
+
+
+#     Discount 
+# Applicable on 
+# Valid for
+
+# Valid on which days 
+
+# Happy hour deal running time
+# Repeat on which Days
+# select terms and conditions
+
+#     cat_name = models.CharField(max_length=250,null = True,blank = True)
+#     display_name = models.CharField(max_length=250,null = True,blank = True)
+#     image = models.FileField(upload_to=get_catagory_path,null = True,blank = True)
+
+
+
+
+
+# class TblCoupons(models.Model):
+#     name = models.CharField(max_length=250,null = True,blank = True)
+#     hour_id = models.CharField(max_length=250,null = True,blank = True)
+#     display_name = models.CharField(max_length=250,null = True,blank = True)
+
+
+#     Coupon running date
+
+
+#     Coupon pricing
+
+#     select terms and conditions
+
+#     upload special offer menus
+
+#     cat_name = models.CharField(max_length=250,null = True,blank = True)
+#     display_name = models.CharField(max_length=250,null = True,blank = True)
+#     image = models.FileField(upload_to=get_catagory_path,null = True,blank = True)
+
+
