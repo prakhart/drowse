@@ -49,13 +49,21 @@ def vendor_dashboard(request):
 
 
 def add_happy_hours(request):
-    return render(request,'company/dashboard/add_happy_hours.html',{"foo":"bar"})
+    form = HappyHourForm(request.POST or None,request.FILES  or None)
+    if request.method == "POST":
+        if form.is_valid():
+            form = form.save()
+    return render(request,'company/dashboard/add_happy_hours.html',{"foo":"bar","form":form})
 
 
 
 
 def plan_coupons(request):
-    return render(request,'company/dashboard/plan_coupons.html',{"foo":"bar"})
+    form = CouponForm(request.POST or None,request.FILES  or None)
+    if request.method == "POST":
+        if form.is_valid():
+            form = form.save()
+    return render(request,'company/dashboard/plan_coupons.html',{"foo":"bar","form":form})
 
 
 def edit_profile(request):

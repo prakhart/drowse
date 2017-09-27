@@ -20,9 +20,15 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            {% if form.errors %}
+              <div class="alert alert-danger" role="alert">
+                  <a href="#" class="alert-link">   {{ form.errors }}</a>
+              </div>
+            {% endif %}
               <div class="content-box">
                 <div class="panel-box">
                   <div class="hdng2" id="promote-coupons">promote <span>coupons</span></div>
+                  <form class="form-horizontal"  method="post" enctype="multipart/form-data">{% csrf_token %}
                   <div class="row">
                     <div class="col-sm-6 col-md-6">
                       <div class="row">
@@ -280,10 +286,8 @@
                     <div class="multiple-browse">
 
                       <div class="col-sm-12 col-md-6">
-                        <form action="/action_page.php">
                           <div class="submit-browse"><input type="file" name="img" class="form-control" multiple=""></div>
                           <div class="submit-browse2"> <input type="submit" class="btn btn-success"></div>
-                        </form>
                       </div>
                     </div>
                   </div>
@@ -309,6 +313,7 @@
                       </div>
                     </div>
                   </div>
+                </form>
                 </div>
                 <div class="panel-box">
                   <div class="row">

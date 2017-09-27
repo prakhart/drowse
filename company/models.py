@@ -154,49 +154,66 @@ class TblData(models.Model):
     image = models.FileField(upload_to=get_catagory_path,null = True,blank = True)
 
 
+class TblRepetetionDate(models.Model):
+    happy_hour = models.ForeignKey("TblHappyHours",null = True,blank = True)
+    day = models.CharField(max_length=250,null = True,blank = True)
+    start_time = models.CharField(max_length=250,null = True,blank = True)
+    end_time = models.CharField(max_length=250,null = True,blank = True)
+    date_created = models.DateTimeField(null = True,blank = True)
+    date_updated = models.DateTimeField(null = True,blank = True)
 
-
-# class TblHappyHours(models.Model):
-#     name = models.CharField(max_length=250,null = True,blank = True)
-#     hour_id = models.CharField(max_length=250,null = True,blank = True)
-#     display_name = models.CharField(max_length=250,null = True,blank = True)
-
-
-#     Discount 
-# Applicable on 
-# Valid for
-
-# Valid on which days 
-
-# Happy hour deal running time
-# Repeat on which Days
-# select terms and conditions
-
-#     cat_name = models.CharField(max_length=250,null = True,blank = True)
-#     display_name = models.CharField(max_length=250,null = True,blank = True)
-#     image = models.FileField(upload_to=get_catagory_path,null = True,blank = True)
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.date_created = constants.FORMATTED_TIME()
+        self.date_updated = constants.FORMATTED_TIME()
+        super(TblRepetetionDate, self).save(*args, **kwargs)
 
 
 
 
+class TblHappyHours(models.Model):
+    name = models.CharField(max_length=250,null = True,blank = True)
+    happy_hour_id = models.CharField(max_length=250,null = True,blank = True)
+    display_name = models.CharField(max_length=250,null = True,blank = True)
+    start_time = models.CharField(max_length=250,null = True,blank = True)
+    end_time = models.CharField(max_length=250,null = True,blank = True)
+    discount  = models.CharField(max_length=250,null = True,blank = True)
+    applicable_on  = models.CharField(max_length=250,null = True,blank = True)
+    valid_for = models.CharField(max_length=250,null = True,blank = True)
+    valid_on_days = models.CharField(max_length=250,null = True,blank = True)
+    terms_conditions = models.CharField(max_length=250,null = True,blank = True)
+    date_created = models.DateTimeField(null = True,blank = True)
+    date_updated = models.DateTimeField(null = True,blank = True)
 
-# class TblCoupons(models.Model):
-#     name = models.CharField(max_length=250,null = True,blank = True)
-#     hour_id = models.CharField(max_length=250,null = True,blank = True)
-#     display_name = models.CharField(max_length=250,null = True,blank = True)
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.date_created = constants.FORMATTED_TIME()
+        self.date_updated = constants.FORMATTED_TIME()
+        super(TblHappyHours, self).save(*args, **kwargs)
 
 
-#     Coupon running date
+class TblCoupons(models.Model):
+    name = models.CharField(max_length=250,null = True,blank = True)
+    coupon_id = models.CharField(max_length=250,null = True,blank = True)
+    display_name = models.CharField(max_length=250,null = True,blank = True)
+    discount  = models.CharField(max_length=250,null = True,blank = True)
+    applicable_on  = models.CharField(max_length=250,null = True,blank = True)
+    valid_for = models.CharField(max_length=250,null = True,blank = True)
+    valid_on_days = models.CharField(max_length=250,null = True,blank = True)
+    start_date = models.CharField(max_length=250,null = True,blank = True)
+    end_date = models.CharField(max_length=250,null = True,blank = True)
+    actual_price = models.CharField(max_length=250,null = True,blank = True)
+    offer_price = models.CharField(max_length=250,null = True,blank = True)
+    terms_conditions = models.CharField(max_length=250,null = True,blank = True)
+    special_offer_menus =  models.FileField(upload_to=get_catagory_path,null = True,blank = True)
+    date_created = models.DateTimeField(null = True,blank = True)
+    date_updated = models.DateTimeField(null = True,blank = True)
 
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.date_created = constants.FORMATTED_TIME()
+        self.date_updated = constants.FORMATTED_TIME()
+        super(TblCoupons, self).save(*args, **kwargs)
 
-#     Coupon pricing
-
-#     select terms and conditions
-
-#     upload special offer menus
-
-#     cat_name = models.CharField(max_length=250,null = True,blank = True)
-#     display_name = models.CharField(max_length=250,null = True,blank = True)
-#     image = models.FileField(upload_to=get_catagory_path,null = True,blank = True)
 
 

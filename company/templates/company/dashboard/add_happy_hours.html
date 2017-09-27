@@ -19,9 +19,15 @@
       </div>
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          {% if form.errors %}
+            <div class="alert alert-danger" role="alert">
+                <a href="#" class="alert-link">   {{ form.errors }}</a>
+            </div>
+          {% endif %}
           <div class="content-box">
             <div class="panel-box">
               <div class="hdng2" id="happy-hour-deal">upload <span>happy hour</span> deal</div>
+              <form class="form-horizontal"  method="post" enctype="multipart/form-data">{% csrf_token %}
               <div class="row">
                 <div class="col-sm-6 col-md-6">
                   <div class="row">
@@ -35,7 +41,7 @@
                     </div>
                     <div class="col-sm-12 col-md-12">
                       <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer name">
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer name">
                       </div>
                     </div>
                   </div>
@@ -45,35 +51,35 @@
                 <div class="col-sm-12 col-md-4">
                   <div class="form-group">
                     <label for="exampleSelect1"><strong>Discount</strong></label>
-                    <select class="form-control" id="exampleSelect1">
-                      <option>10%</option>
-                      <option>20%</option>
-                      <option>30%</option>
-                      <option>40%</option>
-                      <option>50%</option>
+                    <select name = "discount" class="form-control" id="exampleSelect1">
+                      <option value="1">10%</option>
+                      <option value="2">20%</option>
+                      <option value="3">30%</option>
+                      <option value="4">40%</option>
+                      <option value="5">50%</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                   <div class="form-group">
                     <label for="exampleSelect1"><strong>Applicable on</strong></label>
-                    <select class="form-control" id="exampleSelect1">
-                      <option>All Alcohols</option>
-                      <option>All Non Alcohols</option>
-                      <option>Only Beers</option>
-                      <option>Only IMFL</option>
-                      <option>Only Cocktails</option>
+                    <select name = "applicable_on" class="form-control" id="exampleSelect1">
+                      <option value="1">All Alcohols</option>
+                      <option value="2">All Non Alcohols</option>
+                      <option value="3">Only Beers</option>
+                      <option value="4">Only IMFL</option>
+                      <option value="5">Only Cocktails</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                   <div class="form-group">
                     <label for="exampleSelect1"><strong>Valid for</strong></label>
-                    <select class="form-control" id="exampleSelect1">
-                      <option>1 person / coupon </option>
-                      <option>2 person / coupon </option>
-                      <option>3 person / coupon</option>
-                      <option>4 person / coupon</option>
+                    <select name = "valid_for" class="form-control" id="exampleSelect1">
+                      <option value="1">1 person / coupon </option>
+                      <option value="2">2 person / coupon </option>
+                      <option value="3">3 person / coupon</option>
+                      <option value="4">4 person / coupon</option>
                     </select>
                   </div>
                 </div>
@@ -87,49 +93,49 @@
                       <li>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Monday
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name = "valid_on_days" value="1"> Monday
                           </label>
                         </div>
                       </li>
                       <li>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Tuesday
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name = "valid_on_days" value="2"> Tuesday
                           </label>
                         </div>
                       </li>
                       <li>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Wednesday
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="3"> Wednesday
                           </label>
                         </div>
                       </li>
                       <li>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Thursday
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="4"> Thursday
                           </label>
                         </div>
                       </li>
                       <li>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Friday
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="5"> Friday
                           </label>
                         </div>
                       </li>
                       <li>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Saturday
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="6"> Saturday
                           </label>
                         </div>
                       </li>
                       <li>
                         <div class="form-check form-check-inline">
                           <label class="form-check-label">
-                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Sunday
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="7"> Sunday
                           </label>
                         </div>
                       </li>
@@ -137,13 +143,15 @@
                   </div>
                 </div>
               </div>
+
+
               <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                   <label for="exampleInputEmail1"><strong>Happy hour deal running time</strong></label>
                   <div class="row">
                     <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
                       <div class="form-group">
-                        <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                        <input class="form-control" name = "start_time" type="time" value="13:45:00" id="example-time-input">
                       </div>
                     </div>
                     <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
@@ -151,7 +159,7 @@
                     </div>
                     <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
                       <div class="form-group">
-                        <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                        <input class="form-control" name = "end_time" type="time" value="13:45:00" id="example-time-input">
                       </div>
                     </div>
                   </div>
@@ -429,31 +437,31 @@
                         <div class="col-md-12">
                           <ul class="tmc-list2">
                             <li>
-                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <label class="btn " for="american"> <input type="checkbox"  name = "terms_conditions" value = "1" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                               <span class="tmc-span">The outlet is strict about timings and validity of offers. Please check your availability at the pub within the timings announced in the happy hour section, else the ticket would stand invalid, unless considered otherwise by the outlet.</span>
                             </li>
                             <li>
-                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <label class="btn " for="american"> <input type="checkbox"  name = "terms_conditions" value = "2" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                               <span class="tmc-span">Prior reservation recommended. This offer is only applicable through drowse tickets.</span>
                             </li>
                             <li>
-                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <label class="btn " for="american"> <input type="checkbox"  name = "terms_conditions" value = "3" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                               <span class="tmc-span">Once ticket is booked for a particular happy hour offer, it cannot be clubbed or exchanged with any other active / inactive offer.</span>
                             </li>
                             <li>
-                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <label class="btn " for="american"> <input type="checkbox"  name = "terms_conditions" value = "4" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                               <span class="tmc-span">The choice of hookah / drinks / food is based on availability and sole discretion of the pub management.</span>
                             </li>
                             <li>
-                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <label class="btn " for="american"> <input type="checkbox"  name = "terms_conditions" value = "5" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                               <span class="tmc-span">Sharing and packing of food not allowed. Not applicable only on platters and pitchers.</span>
                             </li>
                             <li>
-                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <label class="btn " for="american"> <input type="checkbox"  name = "terms_conditions" value = "6" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                               <span class="tmc-span">Offer not valid on all special days such as festivals, social events and public occasions, unless specified.</span>
                             </li>
                             <li>
-                              <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                              <label class="btn " for="american"> <input type="checkbox"  name = "terms_conditions" value = "7" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                               <span class="tmc-span">All local / national laws regarding legal drinking age stands valid for all drowse customers.</span>
                             </li>
                           </ul>
@@ -495,6 +503,7 @@
                   </div>
                 </div>
               </div>
+            </form>
             </div>
             <div class="panel-box">
               <div class="hdng2" id="happy-hour-notifications"><span>happy hour</span> notifications</div>

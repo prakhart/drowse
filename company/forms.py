@@ -119,13 +119,11 @@ class AddVendor(forms.ModelForm):
     def clean(self):
         error_messages = []
         cleaned_data = super(AddVendor, self).clean()
-        error_messages.append('Email already exist.')
+        # error_messages.append('Email already exist.')
         
         return cleaned_data
     class Meta:
         model = TblVendor
-
-
         fields = ( 'name','description','address','phone','cover_photo','email','web_url','latitude','longitude','category','special_offerings','payment_modes',
                     "mon_op_timings","mon_close_timings","tues_op_timings","tues_close_timings","wed_op_timings","wed_close_timings","thurs_op_timings",
                     "thurs_close_timings","fri_op_timings","fri_close_timings","sat_op_timings","sat_close_timings","sun_op_timings","sun_close_timings",       
@@ -268,3 +266,30 @@ class AddVendor(forms.ModelForm):
 
 
 
+
+class HappyHourForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(HappyHourForm, self).__init__(*args, **kwargs)
+
+    def clean(self):
+        error_messages = []
+        cleaned_data = super(HappyHourForm, self).clean()
+        return cleaned_data
+    class Meta:
+        model = TblHappyHours
+        fields = ( 'name','happy_hour_id','display_name','start_time','end_time','discount','applicable_on','valid_for',\
+                  'valid_on_days','terms_conditions',)
+
+
+class CouponForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(CouponForm, self).__init__(*args, **kwargs)
+
+    def clean(self):
+        error_messages = []
+        cleaned_data = super(CouponForm, self).clean()
+        return cleaned_data
+    class Meta:
+        model = TblCoupons
+        fields = ( 'name','coupon_id','display_name','discount','applicable_on','valid_for','valid_on_days','start_date',\
+                  'end_date','actual_price','offer_price','terms_conditions','special_offer_menus',)
