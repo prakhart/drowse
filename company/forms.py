@@ -279,6 +279,10 @@ class HappyHourForm(forms.ModelForm):
         model = TblHappyHours
         fields = ( 'name','happy_hour_id','display_name','start_time','end_time','discount','applicable_on','valid_for',\
                   'valid_on_days','terms_conditions',)
+        widgets = {
+            'terms_conditions': forms.CheckboxSelectMultiple(), 
+            'valid_on_days': forms.CheckboxSelectMultiple(), 
+            }
 
 
 class CouponForm(forms.ModelForm):
