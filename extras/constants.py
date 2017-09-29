@@ -1,6 +1,5 @@
 import datetime
 import time
-
 import pytz
 
 
@@ -92,7 +91,6 @@ category_dict = {
     "8":"GALA EVENTS",
     }
 
-
 cuisines_dict = {
     "1":"CONTINENTAL",
     "2":"MEXICAN",
@@ -169,5 +167,49 @@ payment_modes_dict = {
     "1":"CASH",
     "2":"CREDIT / DEBIT CARD PAYMENT",
     "3":"ONLINE WALLETS ACCEPTED { PAYTM, MOBIKWIK, FREECHARGE }",
-    "4":"POPULAR COUPONS LIKE SODEXO, DINERS INTERNATIONAL",
+    "4":"POPULAR COUPONS LIKE SODEXO, DINERS INTERNATIONAL"
+    }
+
+discount_dict = {
+  "1" :"10%",
+  "2" :"20%",
+  "3" :"30%",
+  "4" :"40%",
+  "5" :"50%",
+}
+
+applicable_on_dict = {
+  "1" :"All Alcohols",
+  "2" :"All Non Alcohols",
+  "3" :"Only Beers",
+  "4" :"Only IMFL",
+  "5" :"Only Cocktails",
+}
+
+valid_for_dict = {
+  "1" :"1 person / coupon",
+  "2" :"2 person / coupon",
+  "3" :"3 person / coupon",
+  "4" :"4 person / coupon",
+}
+
+valid_on_days_dict ={
+    "1" : "Monday", 
+    "2" : "Tuesday",
+    "3" : "Wednesday",
+    "4" : "Thursday",
+    "5" : "Friday",
+    "6" : "Saturday",
+    "7" : "Sunday"
+
+}
+
+terms_conditions = {
+    "1"  :"The outlet is strict about timings and validity of offers. Please check your availability at the pub within the timings announced in the happy hour section, else the ticket would stand invalid, unless considered otherwise by the outlet.",
+    "2"  :"Prior reservation recommended. This offer is only applicable through drowse tickets.",
+    "3"  :"Once ticket is booked for a particular happy hour offer, it cannot be clubbed or exchanged with any other active / inactive offer.",
+    "4"  :"The choice of hookah / drinks / food is based on availability and sole discretion of the pub management.",
+    "5"  :"Sharing and packing of food not allowed. Not applicable only on platters and pitchers.",
+    "6"  :"Offer not valid on all special days such as festivals, social events and public occasions, unless specified.",
+    "7"  :"All local / national laws regarding legal drinking age stands valid for all drowse customers.",
     }
