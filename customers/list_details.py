@@ -308,3 +308,73 @@ def vendor_details(request):
         }
 	return Response(content)
 
+
+
+
+@api_view(['POST'])
+@csrf_exempt
+def deals_details(request):
+	loadedJsonData = json.loads(request.body)
+	vendor_id = loadedJsonData.get('vendor_id',None)
+	deal_type = loadedJsonData.get('deal_type',None)
+	# deal_type = 1 is happy hour and 2 is coupon
+	longitude = loadedJsonData.get('longitude')
+	message = "No data available"
+	statusSet = 0
+	data = []
+	query_set =[]
+	if deal_type :
+		if int(deal_type)== 1 :
+			if vendor_id :
+				query_set = TblHappyHours.objects.filter(vendor__id	= vendor_id)
+			else:
+				query_set = TblHappyHours.objects.all()
+		if int(deal_type)== 2 :
+			if vendor_id :
+				query_set = TblCoupons.objects.filter(vendor__id = vendor_id)
+			else:
+				query_set = TblCoupons.objects.all()
+
+	for items in query_set:
+		discount_list = []
+		applicable_on_list = []
+		valid_for_list = []
+		valid_on_days_list = []
+		terms_conditions_list = []
+		message = "Data loaded successfuly"
+		discount = str(items.discount)
+		discount_list.append( {"id":discount,"value": constants.discount_dict[discount]})
+		applicable_on = str(items.applicable_on)
+		applicable_on_list.append( {"id":applicable_on,"value": constants.applicable_on_dict[applicable_on]})
+		valid_for = str(items.valid_for)
+		valid_for_list.append( {"id":valid_for,"value": constants.valid_for_dict[valid_for]})
+
+		if items.valid_on_days :		
+			valid_on_days = ast.literal_eval(items.valid_on_days)
+			for i in valid_on_days :
+				i = str(i)
+				valid_on_days_list.append( {"id":i,"value": constants.valid_on_days_dict[i]})
+
+		if items.terms_conditions :
+			terms_conditions = ast.literal_eval(items.terms_conditions)
+			for i in terms_conditions :
+				i = str(i)
+				terms_conditions_list.append( {"id":i,"value": constants.terms_conditions[i]})
+
+		data_dict =	{
+			"name" : items.name,
+			"discount" : discount_list,
+			"applicable_on" : applicable_on_list,
+			"valid_for" : valid_for_list,
+			"valid_on_days" : valid_on_days_list,
+			"terms_conditions" : terms_conditions_list,
+			}
+		data.append(data_dict)
+
+	content = {
+        'status' : statusSet,
+        'responseCode': status.HTTP_200_OK,
+        'message' : message,
+        'data' : data,
+        }
+	return Response(content)

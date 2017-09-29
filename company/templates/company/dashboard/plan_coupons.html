@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-sm-12 col-md-12">
                           <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer name">
+                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer name">
                           </div>
                         </div>
                       </div>
@@ -53,35 +53,35 @@
                     <div class="col-sm-12 col-md-4">
                       <div class="form-group">
                         <label for="exampleSelect1"><strong>Discount</strong></label>
-                        <select class="form-control" id="exampleSelect1">
-                          <option>10%</option>
-                          <option>20%</option>
-                          <option>30%</option>
-                          <option>40%</option>
-                          <option>50%</option>
+                        <select name="discount" class="form-control" id="exampleSelect1">
+                          <option value="1">10%</option>
+                          <option value="2">20%</option>
+                          <option value="3">30%</option>
+                          <option value="4">40%</option>
+                          <option value="5">50%</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-sm-12 col-md-4">
                       <div class="form-group">
                         <label for="exampleSelect1"><strong>Applicable on</strong></label>
-                        <select class="form-control" id="exampleSelect1">
-                          <option>All Alcohols</option>
-                          <option>All Non Alcohols</option>
-                          <option>Only Beers</option>
-                          <option>Only IMFL</option>
-                          <option>Only Cocktails</option>
+                        <select name = "applicable_on" class="form-control" id="exampleSelect1">
+                          <option value="1">All Alcohols</option>
+                          <option value="2">All Non Alcohols</option>
+                          <option value="3">Only Beers</option>
+                          <option value="4">Only IMFL</option>
+                          <option value="5">Only Cocktails</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-sm-12 col-md-4">
                       <div class="form-group">
                         <label for="exampleSelect1"><strong>Valid for</strong></label>
-                        <select class="form-control" id="exampleSelect1">
-                          <option>1 person / coupon </option>
-                          <option>2 person / coupon </option>
-                          <option>3 person / coupon</option>
-                          <option>4 person / coupon</option>
+                        <select name = "valid_for" class="form-control" id="exampleSelect1">
+                          <option value="1">1 person / coupon </option>
+                          <option value="2">2 person / coupon </option>
+                          <option value="3">3 person / coupon</option>
+                          <option value="4">4 person / coupon</option>
                         </select>
                       </div>
                     </div>
@@ -92,56 +92,56 @@
                         <label for="exampleSelect1"><strong>Valid on which days</strong></label>
                         <br />
                         <ul class="days-list">
-                          <li>
-                            <div class="form-check form-check-inline">
-                              <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Monday
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check form-check-inline">
-                              <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Tuesday
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check form-check-inline">
-                              <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Wednesday
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check form-check-inline">
-                              <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Thursday
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check form-check-inline">
-                              <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Friday
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check form-check-inline">
-                              <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Saturday
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="form-check form-check-inline">
-                              <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"> Sunday
-                              </label>
-                            </div>
-                          </li>
-                        </ul>
+                            <li>
+                              <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name = "valid_on_days" value="1"> Monday
+                                </label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name = "valid_on_days" value="2"> Tuesday
+                                </label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="3"> Wednesday
+                                </label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="4"> Thursday
+                                </label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="5"> Friday
+                                </label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="6"> Saturday
+                                </label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name = "valid_on_days" value="7"> Sunday
+                                </label>
+                              </div>
+                            </li>
+                          </ul>
                       </div>
                     </div>
                   </div>
@@ -152,7 +152,7 @@
                         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div class="form-group">
                             <div class='input-group date' id='datetimepicker6'>
-                              <input type='text' class="form-control" placeholder="start date" id="dp1" />
+                              <input type='text' name ='start_date' class="form-control" placeholder="start date" id="dp1" />
                               <span class="input-group-addon">
                               <span class="glyphicon glyphicon-calendar"></span>
                               </span>
@@ -165,7 +165,7 @@
                         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5">
                           <div class="form-group">
                             <div class='input-group date' id='datetimepicker7'>
-                              <input type='text' class="form-control" placeholder="end date" id="dp2"/>
+                              <input type='text' name ='end_date' class="form-control" placeholder="end date" id="dp2" />
                               <span class="input-group-addon">
                               <span class="glyphicon glyphicon-calendar"></span>
                               </span>
@@ -224,13 +224,13 @@
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                       <label for="exampleInputEmail1"><strong>Coupon pricing</strong></label>
                       <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="actual price INR">
+                        <input type="text" name="actual_price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="actual price INR">
                       </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                       <label for="exampleInputEmail1"><strong>&nbsp;</strong></label>
                       <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer price INR">
+                        <input type="text" name="offer_price" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="offer price INR">
                       </div>
                     </div>
                   </div>
@@ -244,31 +244,31 @@
                             <div class="col-md-12">
                               <ul class="tmc-list2">
                                 <li>
-                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <label class="btn " for="american"> <input type="checkbox" name = "terms_conditions" value = "1" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                                   <span class="tmc-span">The outlet is strict about timings and validity of offers. Please check your availability at the pub within the timings announced in the happy hour section, else the ticket would stand invalid, unless considered otherwise by the outlet.</span>
                                 </li>
                                 <li>
-                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <label class="btn " for="american"> <input type="checkbox" name = "terms_conditions" value = "2" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                                   <span class="tmc-span">Prior reservation recommended. This offer is only applicable through drowse tickets.</span>
                                 </li>
                                 <li>
-                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <label class="btn " for="american"> <input type="checkbox" name = "terms_conditions" value = "3" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                                   <span class="tmc-span">Once ticket is booked for a particular happy hour offer, it cannot be clubbed or exchanged with any other active / inactive offer.</span>
                                 </li>
                                 <li>
-                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <label class="btn " for="american"> <input type="checkbox" name = "terms_conditions" value = "4" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                                   <span class="tmc-span">The choice of hookah / drinks / food is based on availability and sole discretion of the pub management.</span>
                                 </li>
                                 <li>
-                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <label class="btn " for="american"> <input type="checkbox" name = "terms_conditions" value = "5" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                                   <span class="tmc-span">Sharing and packing of food not allowed. Not applicable only on platters and pitchers.</span>
                                 </li>
                                 <li>
-                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <label class="btn " for="american"> <input type="checkbox" name = "terms_conditions" value = "6" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                                   <span class="tmc-span">Offer not valid on all special days such as festivals, social events and public occasions, unless specified.</span>
                                 </li>
                                 <li>
-                                  <label class="btn " for="american"> <input type="checkbox" name="american" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
+                                  <label class="btn " for="american"> <input type="checkbox" name = "terms_conditions" value = "7" id="american"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> </label>
                                   <span class="tmc-span">All local / national laws regarding legal drinking age stands valid for all drowse customers.</span>
                                 </li>
                               </ul>
@@ -286,8 +286,8 @@
                     <div class="multiple-browse">
 
                       <div class="col-sm-12 col-md-6">
-                          <div class="submit-browse"><input type="file" name="img" class="form-control" multiple=""></div>
-                          <div class="submit-browse2"> <input type="submit" class="btn btn-success"></div>
+                          <div class="submit-browse"><input type="file" name="special_offer_menus" class="form-control" ></div>
+                         <!--  <div class="submit-browse2"> <input type="submit" class="btn btn-success"></div> -->
                       </div>
                     </div>
                   </div>
@@ -309,7 +309,7 @@
                     <div class="col-sm-12 col-md-7"></div>
                     <div class="col-sm-12 col-md-2 proceed-btn-mrgn">
                       <div class="btn-right">
-                        <a href="#" class="btn proceed-btn active" role="button" aria-pressed="true">Proceed</a>
+                        <button class="btn proceed-btn active"  type="submit" aria-pressed="true">Proceed</button>
                       </div>
                     </div>
                   </div>
@@ -483,7 +483,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                       <div class="close-ticket-box">
                         <div class="form-group">
-                          <div class="close-ticket-inputs"><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter coupon code here"><span><a href="#" class="close-ticket-btn">Close Ticket</a></span></div>
+                          <div class="close-ticket-inputs"><input type="test" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="enter coupon code here"><span><a href="#" class="close-ticket-btn">Close Ticket</a></span></div>
                         </div>
                       </div>
                     </div>

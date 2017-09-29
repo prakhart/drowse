@@ -52,7 +52,7 @@ def add_happy_hours(request):
     form = HappyHourForm(request.POST or None,request.FILES  or None)
     if request.method == "POST":
         if form.is_valid():
-            # form.vendor = reques.user
+            #form.vendor = request.user
             form = form.save()
             repeation_days = [ request.POST.getlist('repeat_on_Monday'),
                 request.POST.getlist('repeat_on_Tuesday'),
@@ -63,6 +63,7 @@ def add_happy_hours(request):
                 request.POST.getlist('repeat_on_Sunday') ]
             happyHour = TblHappyHours.objects.get(id=form.id)
             for items in repeation_days :
+                print len(items) ,'len(items) '
                 if len(items) == 3:
                     repetetion_obj = TblRepetetionDate.objects.create(happy_hour=happyHour,
                                                 day=items[0],start_time=items[1],end_time=items[2])
@@ -80,6 +81,10 @@ def plan_coupons(request):
         if form.is_valid():
             form = form.save()
     return render(request,'company/dashboard/plan_coupons.html',{"foo":"bar","form":form})
+
+
+
+
 
 
 def edit_profile(request):

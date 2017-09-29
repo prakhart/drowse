@@ -169,7 +169,13 @@ class TblRepetetionDate(models.Model):
         self.date_updated = constants.FORMATTED_TIME()
         super(TblRepetetionDate, self).save(*args, **kwargs)
 
-
+def get_special_offer_menu_path(instance, filename):
+    if instance.name:
+        name = instance.name.replace(" ", "")
+        path = os.path.join('cafe_menu', str(name), filename)
+        return path
+    else:
+        return os.path.join('cafe_menu', filename)
 
 
 class TblHappyHours(models.Model):
@@ -193,14 +199,8 @@ class TblHappyHours(models.Model):
         self.date_updated = constants.FORMATTED_TIME()
         super(TblHappyHours, self).save(*args, **kwargs)
 
-def get_special_offer_menu_path(instance, filename):
-    name = instance.name.replace(" ", "")
-    path = os.path.join('cafe_menu', str(name), filename)
-    return path
-
-
-
 class TblCoupons(models.Model):
+    vendor = models.ForeignKey("TblVendor",null = True,blank = True)
     name = models.CharField(max_length=250,null = True,blank = True)
     coupon_id = models.CharField(max_length=250,null = True,blank = True)
     display_name = models.CharField(max_length=250,null = True,blank = True)
@@ -222,6 +222,4 @@ class TblCoupons(models.Model):
             self.date_created = constants.FORMATTED_TIME()
         self.date_updated = constants.FORMATTED_TIME()
         super(TblCoupons, self).save(*args, **kwargs)
-
-
 

@@ -297,3 +297,7 @@ class CouponForm(forms.ModelForm):
         model = TblCoupons
         fields = ( 'name','coupon_id','display_name','discount','applicable_on','valid_for','valid_on_days','start_date',\
                   'end_date','actual_price','offer_price','terms_conditions','special_offer_menus',)
+        widgets = {
+            'terms_conditions': forms.CheckboxSelectMultiple(), 
+            'valid_on_days': forms.CheckboxSelectMultiple(), 
+            }
